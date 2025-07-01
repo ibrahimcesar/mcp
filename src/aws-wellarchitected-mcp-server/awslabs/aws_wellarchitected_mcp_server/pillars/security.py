@@ -192,6 +192,276 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_implement_services_features.html",
         related_best_practices=["SEC01-BP04"]
     ),
+    "SEC02-BP01": BestPractice(
+        id="SEC02-BP01",
+        title="Use Strong Identity Foundation",
+        pillar=Pillar.SECURITY,
+        description="Implement strong identity foundation with centralized identity provider",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you use a centralized identity provider?",
+            "Are you using strong authentication mechanisms?",
+            "Do you implement least privilege access?"
+        ],
+        implementation_guidance=[
+            "Use AWS IAM Identity Center for centralized identity",
+            "Implement multi-factor authentication",
+            "Apply principle of least privilege"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_identity_provider.html"
+    ),
+    "SEC02-BP02": BestPractice(
+        id="SEC02-BP02",
+        title="Use Temporary Credentials",
+        pillar=Pillar.SECURITY,
+        description="Use temporary credentials instead of long-term access keys",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are you using temporary credentials?",
+            "Do you avoid long-term access keys?",
+            "Are credentials rotated regularly?"
+        ],
+        implementation_guidance=[
+            "Use IAM roles instead of access keys",
+            "Implement credential rotation",
+            "Use AWS STS for temporary credentials"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_temp_credentials.html"
+    ),
+    "SEC02-BP03": BestPractice(
+        id="SEC02-BP03",
+        title="Store and Use Secrets Securely",
+        pillar=Pillar.SECURITY,
+        description="Store and use secrets securely using dedicated secret management services",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are secrets stored securely?",
+            "Do you use dedicated secret management services?",
+            "Are secrets rotated automatically?"
+        ],
+        implementation_guidance=[
+            "Use AWS Secrets Manager for secret storage",
+            "Implement automatic secret rotation",
+            "Avoid hardcoding secrets in code"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_secrets.html"
+    ),
+    "SEC02-BP04": BestPractice(
+        id="SEC02-BP04",
+        title="Rely on Centralized Identity Provider",
+        pillar=Pillar.SECURITY,
+        description="Rely on centralized identity provider for human and machine identities",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use centralized identity provider?",
+            "Are identities managed consistently?",
+            "Do you have identity federation?"
+        ],
+        implementation_guidance=[
+            "Use AWS IAM Identity Center",
+            "Implement SAML or OIDC federation",
+            "Centralize identity management"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_centralized_identity.html"
+    ),
+    "SEC02-BP05": BestPractice(
+        id="SEC02-BP05",
+        title="Audit and Rotate Credentials Regularly",
+        pillar=Pillar.SECURITY,
+        description="Audit and rotate credentials regularly to maintain security",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you audit credentials regularly?",
+            "Are credentials rotated on schedule?",
+            "Do you track credential usage?"
+        ],
+        implementation_guidance=[
+            "Use AWS Config for credential auditing",
+            "Implement automated credential rotation",
+            "Monitor credential usage with CloudTrail"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_audit_rotate.html"
+    ),
+    "SEC02-BP06": BestPractice(
+        id="SEC02-BP06",
+        title="Leverage User Groups and Attributes",
+        pillar=Pillar.SECURITY,
+        description="Leverage user groups and attributes for access control",
+        risk_level=RiskLevel.LOW,
+        questions=[
+            "Do you use user groups for access control?",
+            "Are user attributes leveraged for authorization?",
+            "Do you have attribute-based access control?"
+        ],
+        implementation_guidance=[
+            "Use IAM groups for permission management",
+            "Implement attribute-based access control",
+            "Use tags for resource-based permissions"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_identities_user_groups_attributes.html"
+    ),
+    "SEC03-BP01": BestPractice(
+        id="SEC03-BP01",
+        title="Define Access Requirements",
+        pillar=Pillar.SECURITY,
+        description="Define access requirements based on least privilege principle",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are access requirements clearly defined?",
+            "Do you follow least privilege principle?",
+            "Are permissions granted based on job function?"
+        ],
+        implementation_guidance=[
+            "Define role-based access requirements",
+            "Implement least privilege access",
+            "Document access patterns and requirements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_define_requirements.html"
+    ),
+    "SEC03-BP02": BestPractice(
+        id="SEC03-BP02",
+        title="Grant Least Privilege Access",
+        pillar=Pillar.SECURITY,
+        description="Grant least privilege access to users and systems",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you grant minimum necessary permissions?",
+            "Are permissions reviewed regularly?",
+            "Do you use permission boundaries?"
+        ],
+        implementation_guidance=[
+            "Use IAM permission boundaries",
+            "Implement just-in-time access",
+            "Regular permission reviews and cleanup"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_least_privilege.html"
+    ),
+    "SEC03-BP03": BestPractice(
+        id="SEC03-BP03",
+        title="Establish Emergency Access Process",
+        pillar=Pillar.SECURITY,
+        description="Establish emergency access process for break-glass scenarios",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have emergency access procedures?",
+            "Are break-glass processes documented?",
+            "Is emergency access monitored and audited?"
+        ],
+        implementation_guidance=[
+            "Create emergency access roles",
+            "Document break-glass procedures",
+            "Monitor and audit emergency access usage"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_emergency_access.html"
+    ),
+    "SEC03-BP04": BestPractice(
+        id="SEC03-BP04",
+        title="Reduce Permissions Continuously",
+        pillar=Pillar.SECURITY,
+        description="Continuously reduce permissions based on usage patterns",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you analyze permission usage?",
+            "Are unused permissions removed?",
+            "Do you have automated permission optimization?"
+        ],
+        implementation_guidance=[
+            "Use AWS Access Analyzer",
+            "Implement permission usage monitoring",
+            "Automate permission cleanup processes"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_reduce_continuously.html"
+    ),
+    "SEC03-BP05": BestPractice(
+        id="SEC03-BP05",
+        title="Define Permission Guardrails for Your Organization",
+        pillar=Pillar.SECURITY,
+        description="Define permission guardrails to prevent privilege escalation",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have permission guardrails?",
+            "Are privilege escalation paths blocked?",
+            "Do you use service control policies?"
+        ],
+        implementation_guidance=[
+            "Use AWS Organizations SCPs",
+            "Implement permission boundaries",
+            "Define organizational permission policies"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_guardrails.html"
+    ),
+    "SEC03-BP06": BestPractice(
+        id="SEC03-BP06",
+        title="Manage Access Based on Life Cycle",
+        pillar=Pillar.SECURITY,
+        description="Manage access based on user and resource life cycles",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you manage access based on life cycles?",
+            "Are permissions updated when roles change?",
+            "Do you have automated provisioning/deprovisioning?"
+        ],
+        implementation_guidance=[
+            "Implement automated user provisioning",
+            "Use identity lifecycle management",
+            "Automate access reviews and updates"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_lifecycle.html"
+    ),
+    "SEC03-BP07": BestPractice(
+        id="SEC03-BP07",
+        title="Analyze Public and Cross-Account Access",
+        pillar=Pillar.SECURITY,
+        description="Analyze and monitor public and cross-account access",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you analyze public access?",
+            "Are cross-account permissions monitored?",
+            "Do you have visibility into external access?"
+        ],
+        implementation_guidance=[
+            "Use AWS Access Analyzer",
+            "Monitor cross-account access patterns",
+            "Regular review of public access permissions"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_analyze_cross_account.html"
+    ),
+    "SEC03-BP08": BestPractice(
+        id="SEC03-BP08",
+        title="Share Resources Securely Within Your Organization",
+        pillar=Pillar.SECURITY,
+        description="Share resources securely within your organization",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you share resources securely?",
+            "Are sharing mechanisms controlled?",
+            "Do you monitor resource sharing?"
+        ],
+        implementation_guidance=[
+            "Use AWS Resource Access Manager",
+            "Implement secure sharing policies",
+            "Monitor and audit resource sharing"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_share_securely.html"
+    ),
+    "SEC03-BP09": BestPractice(
+        id="SEC03-BP09",
+        title="Share Resources Securely with a Third Party",
+        pillar=Pillar.SECURITY,
+        description="Share resources securely with third parties when needed",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you share resources securely with third parties?",
+            "Are third-party access controls in place?",
+            "Do you monitor third-party access?"
+        ],
+        implementation_guidance=[
+            "Use cross-account roles for third-party access",
+            "Implement external ID for additional security",
+            "Monitor and audit third-party access"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_permissions_share_third_party.html"
+    ),
     "SEC06-BP01": BestPractice(
         id="SEC06-BP01",
         title="Perform Application Security Testing",
