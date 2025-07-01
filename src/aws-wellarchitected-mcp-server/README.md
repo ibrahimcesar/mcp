@@ -339,6 +339,31 @@ The server evaluates 12+ core best practices across all pillars:
 - **SEC02**: Security at All Layers
 
 ### 🛡️ Reliability
+- **REL01-BP01**: Become Aware of Service Quotas and Constraints
+- **REL01-BP02**: Manage Service Quotas Across Accounts and Regions
+- **REL01-BP03**: Accommodate Fixed Service Quotas and Constraints
+- **REL01-BP04**: Monitor and Manage Quotas
+- **REL01-BP05**: Automate Quota Monitoring
+- **REL01-BP06**: Ensure Sufficient Buffer for Quotas
+- **REL02-BP01**: Ensure Highly Available Network Connectivity for Users
+- **REL02-BP02**: Ensure Highly Available Network Connectivity Between Systems
+- **REL02-BP03**: Ensure IP Subnet Allocation Accounts for Expansion and Availability
+- **REL02-BP04**: Prefer Hub-and-Spoke Topologies over Many-to-Many Mesh
+- **REL02-BP05**: Enforce Non-overlapping Private IP Address Ranges
+- **REL03-BP01**: Choose How to Segment Your Workload *(requires user input)*
+- **REL03-BP02**: Build Services Focused on Specific Business Domains *(requires user input)*
+- **REL03-BP03**: Provide Service Contracts per API
+- **REL04-BP01**: Identify Which Kind of Distributed System Failure to Protect Against *(requires user input)*
+- **REL04-BP02**: Implement Loosely Coupled Dependencies
+- **REL04-BP03**: Do Constant Work
+- **REL04-BP04**: Make All Responses Idempotent
+- **REL05-BP01**: Implement Graceful Degradation
+- **REL05-BP02**: Throttle Requests
+- **REL05-BP03**: Control and Limit Retry Calls
+- **REL05-BP04**: Fail Fast and Limit Queues
+- **REL05-BP05**: Set Client Timeouts
+- **REL05-BP06**: Make Services Stateless Where Possible
+- **REL05-BP07**: Implement Emergency Levers *(requires user input)*
 - **REL01**: Design for Failure
 - **REL02**: Auto Scaling
 
