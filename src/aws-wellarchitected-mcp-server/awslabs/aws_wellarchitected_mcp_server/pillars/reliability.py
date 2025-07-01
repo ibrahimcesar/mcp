@@ -570,6 +570,114 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_monitor_resources.html",
         related_best_practices=["REL06-BP02", "REL06-BP07"]
     ),
+    "REL06-BP02": BestPractice(
+        id="REL06-BP02",
+        title="Define and Calculate Metrics",
+        pillar=Pillar.RELIABILITY,
+        description="Store log data and apply filters where necessary to calculate metrics",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you define and calculate meaningful metrics?",
+            "Are metrics aligned with business objectives?",
+            "Do you have both technical and business metrics?"
+        ],
+        implementation_guidance=[
+            "Define KPIs and SLIs for your workload",
+            "Use CloudWatch custom metrics",
+            "Calculate business and technical metrics"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_define_metrics.html"
+    ),
+    "REL06-BP03": BestPractice(
+        id="REL06-BP03",
+        title="Send Notifications Based on Monitoring",
+        pillar=Pillar.RELIABILITY,
+        description="Organizations that need to know when operations are impacted receive notifications",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you send notifications based on monitoring data?",
+            "Are notifications sent to appropriate stakeholders?",
+            "Are notification thresholds properly configured?"
+        ],
+        implementation_guidance=[
+            "Configure CloudWatch alarms with appropriate thresholds",
+            "Use SNS for notification delivery",
+            "Ensure notifications reach the right people"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_send_notifications.html"
+    ),
+    "REL06-BP04": BestPractice(
+        id="REL06-BP04",
+        title="Automate Responses to Events",
+        pillar=Pillar.RELIABILITY,
+        description="Use automation to take action when an event is detected",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you automate responses to monitoring events?",
+            "Are automated responses tested and validated?",
+            "Do you have safeguards for automated actions?"
+        ],
+        implementation_guidance=[
+            "Use Lambda functions for automated responses",
+            "Implement Systems Manager automation",
+            "Test automated responses regularly"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_automate_responses.html"
+    ),
+    "REL06-BP05": BestPractice(
+        id="REL06-BP05",
+        title="Analyze Metrics to Establish a Baseline",
+        pillar=Pillar.RELIABILITY,
+        description="Analyze metrics to establish normal operating parameters",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you analyze metrics to establish baselines?",
+            "Are normal operating parameters documented?",
+            "Do you use baselines for anomaly detection?"
+        ],
+        implementation_guidance=[
+            "Collect historical metrics data",
+            "Use statistical analysis to establish baselines",
+            "Implement anomaly detection based on baselines"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_analyze_metrics.html"
+    ),
+    "REL06-BP06": BestPractice(
+        id="REL06-BP06",
+        title="Learn Expected Patterns of Degradation for Your Architecture",
+        pillar=Pillar.RELIABILITY,
+        description="Understand how your architecture degrades and plan accordingly",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you understand degradation patterns?",
+            "Are degradation scenarios documented?",
+            "Do you plan for graceful degradation?"
+        ],
+        implementation_guidance=[
+            "Study system behavior under stress",
+            "Document degradation patterns",
+            "Plan for graceful degradation scenarios"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_expected_patterns_degradation.html"
+    ),
+    "REL06-BP07": BestPractice(
+        id="REL06-BP07",
+        title="Monitor End-to-End Tracing of Requests Through Your System",
+        pillar=Pillar.RELIABILITY,
+        description="Understand the flow of requests through your system",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you monitor end-to-end request tracing?",
+            "Can you trace requests across all system components?",
+            "Do you use distributed tracing?"
+        ],
+        implementation_guidance=[
+            "Use AWS X-Ray for distributed tracing",
+            "Implement correlation IDs",
+            "Monitor request flows end-to-end"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_monitor_aws_resources_end_to_end_tracing.html"
+    ),
     "REL07-BP01": BestPractice(
         id="REL07-BP01",
         title="Use Auto Scaling or Other Scaling Policies",
@@ -590,6 +698,42 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_adapt_to_changes_autoscale_adapt.html",
         related_best_practices=["REL07-BP02", "REL07-BP03"]
+    ),
+    "REL07-BP02": BestPractice(
+        id="REL07-BP02",
+        title="Obtain or Build Adaptive Capabilities in Your Load Balancing Solution",
+        pillar=Pillar.RELIABILITY,
+        description="Implement adaptive load balancing to handle changing conditions",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Does your load balancing adapt to changing conditions?",
+            "Do you use health checks for load balancing decisions?",
+            "Are load balancing algorithms appropriate for your workload?"
+        ],
+        implementation_guidance=[
+            "Use Application Load Balancer with health checks",
+            "Implement adaptive routing algorithms",
+            "Monitor load balancer performance"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_adapt_to_changes_load_balancing.html"
+    ),
+    "REL07-BP03": BestPractice(
+        id="REL07-BP03",
+        title="Load Test Your Workload",
+        pillar=Pillar.RELIABILITY,
+        description="Adopt a load testing methodology to measure if scaling activity meets workload requirements",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you perform regular load testing?",
+            "Are load tests representative of production traffic?",
+            "Do you test scaling behavior under load?"
+        ],
+        implementation_guidance=[
+            "Implement comprehensive load testing",
+            "Use realistic traffic patterns",
+            "Test auto-scaling behavior"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_adapt_to_changes_load_testing.html"
     ),
     "REL08-BP01": BestPractice(
         id="REL08-BP01",
@@ -612,6 +756,42 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         requires_user_input=True,
         url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_tracking_change_management_planned_changemgmt.html",
         related_best_practices=["REL08-BP02"]
+    ),
+    "REL08-BP02": BestPractice(
+        id="REL08-BP02",
+        title="Use Playbooks to Investigate Issues",
+        pillar=Pillar.RELIABILITY,
+        description="Predefined steps to perform to identify the factors contributing to a failure scenario",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have playbooks for investigating issues?",
+            "Are investigation procedures documented?",
+            "Do playbooks include escalation procedures?"
+        ],
+        implementation_guidance=[
+            "Create investigation playbooks",
+            "Document troubleshooting procedures",
+            "Include escalation paths"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_tracking_change_management_planned_changemgmt.html"
+    ),
+    "REL08-BP03": BestPractice(
+        id="REL08-BP03",
+        title="Make Infrastructure Immutable",
+        pillar=Pillar.RELIABILITY,
+        description="This approach reduces configuration drift and ensures consistent deployments",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use immutable infrastructure?",
+            "Are deployments consistent and repeatable?",
+            "Do you avoid configuration drift?"
+        ],
+        implementation_guidance=[
+            "Use immutable deployment patterns",
+            "Implement infrastructure as code",
+            "Avoid manual configuration changes"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_tracking_change_management_immutable_infrastructure.html"
     ),
     "REL09-BP01": BestPractice(
         id="REL09-BP01",
@@ -1117,4 +1297,5 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_auto_recovery.html",
         related_best_practices=["REL13-BP04"]
     )
+}
 }
