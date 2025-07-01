@@ -194,6 +194,25 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         related_best_practices=["COST01-BP07"],
         requires_user_input=True
     ),
+    "COST01-BP09": BestPractice(
+        id="COST01-BP09",
+        title="Quantify Business Value from Cost Optimization",
+        pillar=Pillar.COST_OPTIMIZATION,
+        description="Quantify the business value achieved through cost optimization efforts",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you quantify the business value from cost optimization?",
+            "Are cost savings tracked and reported?",
+            "Do you measure ROI of optimization efforts?"
+        ],
+        implementation_guidance=[
+            "Track and report cost savings achieved",
+            "Calculate ROI of optimization initiatives",
+            "Communicate business value to stakeholders"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost_cloud_financial_management_quantify_value.html",
+        requires_user_input=True
+    ),
     "COST02-BP01": BestPractice(
         id="COST02-BP01",
         title="Develop Policies Based on Your Organization Requirements",
@@ -1031,7 +1050,7 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Track and implement review recommendations"
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost_evaluate_new_services_review_process.html",
-        related_best_practices=["COST10-BP02", "COST10-BP03"],
+        related_best_practices=["COST10-BP02"],
         requires_user_input=True
     ),
     "COST10-BP02": BestPractice(
@@ -1053,12 +1072,12 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Implement identified optimization opportunities"
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost_evaluate_new_services_review_workload.html",
-        related_best_practices=["COST10-BP01", "COST10-BP03"],
+        related_best_practices=["COST10-BP01"],
         requires_user_input=True
     ),
-    "COST10-BP03": BestPractice(
-        id="COST10-BP03",
-        title="Automate Operations to Reduce Effort",
+    "COST11-BP01": BestPractice(
+        id="COST11-BP01",
+        title="Perform Automation for Operations",
         pillar=Pillar.COST_OPTIMIZATION,
         description="Automate operations to reduce manual effort and associated costs",
         risk_level=RiskLevel.MEDIUM,
@@ -1075,6 +1094,6 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Use Infrastructure as Code for consistent deployments"
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost_evaluate_cost_effort_automations_operations.html",
-        related_best_practices=["COST10-BP01", "COST10-BP02"]
+        requires_user_input=True
     )
 }
