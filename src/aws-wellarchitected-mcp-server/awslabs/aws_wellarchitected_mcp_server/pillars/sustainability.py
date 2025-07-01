@@ -145,7 +145,7 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Design responsive interfaces that work on various devices"
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_user_a6.html",
-        related_best_practices=["SUS02-BP03", "SUS02-BP07"],
+        related_best_practices=["SUS02-BP03"],
         requires_user_input=True
     ),
     "SUS02-BP06": BestPractice(
@@ -637,4 +637,5 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sus_sus_dev_a5.html",
         related_best_practices=["SUS06-BP03", "SUS06-BP04"]
     )
+}
 }
