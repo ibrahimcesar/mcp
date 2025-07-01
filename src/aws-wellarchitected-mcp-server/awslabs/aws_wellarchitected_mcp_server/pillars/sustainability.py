@@ -18,4 +18,39 @@ from awslabs.aws_wellarchitected_mcp_server.models import Pillar, RiskLevel
 from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import BestPractice
 from typing import Dict
 
-SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {}
+SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
+    "SUS01": BestPractice(
+        id="SUS01",
+        title="Optimize Resource Utilization",
+        pillar=Pillar.SUSTAINABILITY,
+        description="Maximize utilization of provisioned resources",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Are you monitoring resource utilization?",
+            "Do you right-size resources based on actual usage?",
+            "Are you using serverless where appropriate?"
+        ],
+        implementation_guidance=[
+            "Use CloudWatch to monitor utilization",
+            "Implement auto-scaling to match demand",
+            "Consider serverless architectures for variable workloads"
+        ]
+    ),
+    "SUS02": BestPractice(
+        id="SUS02",
+        title="Use Managed Services",
+        pillar=Pillar.SUSTAINABILITY,
+        description="Leverage AWS managed services to reduce operational overhead",
+        risk_level=RiskLevel.LOW,
+        questions=[
+            "Are you using managed services where possible?",
+            "Do you have a strategy for reducing operational overhead?",
+            "Are you leveraging serverless technologies?"
+        ],
+        implementation_guidance=[
+            "Use RDS instead of self-managed databases",
+            "Leverage Lambda for event-driven processing",
+            "Consider managed container services like Fargate"
+        ]
+    )
+}

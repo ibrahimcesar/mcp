@@ -18,4 +18,39 @@ from awslabs.aws_wellarchitected_mcp_server.models import Pillar, RiskLevel
 from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import BestPractice
 from typing import Dict
 
-PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {}
+PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
+    "PERF01": BestPractice(
+        id="PERF01",
+        title="Use Appropriate Instance Types",
+        pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        description="Select the right compute resources for your workload",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Have you analyzed your compute requirements?",
+            "Are you using the most appropriate instance types?",
+            "Do you regularly review and optimize instance selection?"
+        ],
+        implementation_guidance=[
+            "Use AWS Compute Optimizer recommendations",
+            "Consider specialized instance types (GPU, memory-optimized)",
+            "Regularly review and right-size instances"
+        ]
+    ),
+    "PERF02": BestPractice(
+        id="PERF02",
+        title="Implement Caching Strategies",
+        pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        description="Use caching to improve application performance",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Are you using caching for frequently accessed data?",
+            "Do you have CDN for static content?",
+            "Are database queries optimized?"
+        ],
+        implementation_guidance=[
+            "Use ElastiCache for application caching",
+            "Implement CloudFront for content delivery",
+            "Optimize database queries and indexing"
+        ]
+    )
+}

@@ -18,4 +18,39 @@ from awslabs.aws_wellarchitected_mcp_server.models import Pillar, RiskLevel
 from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import BestPractice
 from typing import Dict
 
-COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {}
+COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
+    "COST01": BestPractice(
+        id="COST01",
+        title="Implement Cost Monitoring",
+        pillar=Pillar.COST_OPTIMIZATION,
+        description="Monitor and analyze costs to identify optimization opportunities",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have cost monitoring and alerting?",
+            "Are you tracking costs by service and project?",
+            "Do you regularly review cost optimization opportunities?"
+        ],
+        implementation_guidance=[
+            "Use AWS Cost Explorer and Budgets",
+            "Implement cost allocation tags",
+            "Set up cost anomaly detection"
+        ]
+    ),
+    "COST02": BestPractice(
+        id="COST02",
+        title="Use Reserved Instances and Savings Plans",
+        pillar=Pillar.COST_OPTIMIZATION,
+        description="Commit to usage to reduce costs for predictable workloads",
+        risk_level=RiskLevel.LOW,
+        questions=[
+            "Have you analyzed your usage patterns?",
+            "Are you using Reserved Instances for steady-state workloads?",
+            "Do you have Savings Plans for flexible compute usage?"
+        ],
+        implementation_guidance=[
+            "Analyze usage with Cost Explorer",
+            "Purchase Reserved Instances for predictable workloads",
+            "Consider Compute Savings Plans for flexibility"
+        ]
+    )
+}
