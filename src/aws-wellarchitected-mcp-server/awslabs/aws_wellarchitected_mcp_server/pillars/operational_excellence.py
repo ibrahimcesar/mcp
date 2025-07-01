@@ -1436,24 +1436,4 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         ],
         url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_event_response_dashboards.html"
     ),
-    "OPS10-BP07": BestPractice(
-        id="OPS10-BP07",
-        title="Automate Responses to Events",
-        pillar=Pillar.OPERATIONAL_EXCELLENCE,
-        description="Automate responses to well-understood operational events",
-        risk_level=RiskLevel.MEDIUM,
-        questions=[
-            "Do you automate responses to well-understood events?",
-            "Are automated responses tested and validated?",
-            "Do you have safeguards to prevent automated response failures?",
-            "Are automated responses monitored and logged?"
-        ],
-        implementation_guidance=[
-            "Use AWS Systems Manager Automation for event response",
-            "Implement automated scaling and recovery procedures",
-            "Test automated responses regularly",
-            "Monitor and log all automated response actions"
-        ],
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_event_response_auto_event_response.html"
-    ),
 }
