@@ -613,4 +613,508 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_tracking_change_management_planned_changemgmt.html",
         related_best_practices=["REL08-BP02"]
     ),
+    "REL09-BP01": BestPractice(
+        id="REL09-BP01",
+        title="Identify and Back Up All Data That Needs to Be Backed Up",
+        pillar=Pillar.RELIABILITY,
+        description="Identify and back up all data that needs to be backed up, or reproduce the data from sources",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you identified all data that needs to be backed up?",
+            "Are backup requirements documented for each data type?",
+            "Do you understand data dependencies and relationships?",
+            "Are backup strategies aligned with business requirements?"
+        ],
+        implementation_guidance=[
+            "Conduct data inventory to identify all critical data",
+            "Document backup requirements for each data classification",
+            "Use AWS Backup for centralized backup management",
+            "Implement automated backup scheduling"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_identified_backups_data.html",
+        related_best_practices=["REL09-BP02", "REL09-BP03", "REL09-BP04"]
+    ),
+    "REL09-BP02": BestPractice(
+        id="REL09-BP02",
+        title="Secure and Encrypt Backups",
+        pillar=Pillar.RELIABILITY,
+        description="Secure and encrypt backups to protect data integrity and confidentiality",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are all backups encrypted at rest and in transit?",
+            "Do you use appropriate access controls for backup data?",
+            "Are backup encryption keys managed securely?",
+            "Do you have backup integrity verification processes?"
+        ],
+        implementation_guidance=[
+            "Enable encryption for all backup data",
+            "Use AWS KMS for backup encryption key management",
+            "Implement least privilege access for backup resources",
+            "Verify backup integrity regularly"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_secured_backups_data.html",
+        related_best_practices=["REL09-BP01", "REL09-BP03"]
+    ),
+    "REL09-BP03": BestPractice(
+        id="REL09-BP03",
+        title="Perform Data Backup Automatically",
+        pillar=Pillar.RELIABILITY,
+        description="Perform data backup automatically based on a periodic schedule or changes to the dataset",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are backups performed automatically on a regular schedule?",
+            "Do you have event-driven backup triggers?",
+            "Are backup schedules aligned with business requirements?",
+            "Do you monitor backup job success and failures?"
+        ],
+        implementation_guidance=[
+            "Use AWS Backup for automated backup scheduling",
+            "Implement event-driven backups for critical changes",
+            "Set up backup monitoring and alerting",
+            "Automate backup lifecycle management"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_automated_backups_data.html",
+        related_best_practices=["REL09-BP01", "REL09-BP04"]
+    ),
+    "REL09-BP04": BestPractice(
+        id="REL09-BP04",
+        title="Perform Periodic Recovery of the Data to Verify Backup Integrity and Processes",
+        pillar=Pillar.RELIABILITY,
+        description="Validate that your backup process implementation meets Recovery Time Objective and Recovery Point Objective",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you regularly test backup recovery procedures?",
+            "Are recovery tests documented and scheduled?",
+            "Do you validate RTO and RPO requirements?",
+            "Are recovery test results tracked and analyzed?"
+        ],
+        implementation_guidance=[
+            "Schedule regular backup recovery testing",
+            "Automate recovery testing where possible",
+            "Document recovery procedures and test results",
+            "Validate recovery times against business requirements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_backing_up_data_periodic_recovery_testing_data.html",
+        related_best_practices=["REL09-BP01", "REL09-BP03"]
+    ),
+    "REL10-BP01": BestPractice(
+        id="REL10-BP01",
+        title="Deploy the Workload to Multiple Locations",
+        pillar=Pillar.RELIABILITY,
+        description="Distribute workload data and resources across multiple Availability Zones or AWS Regions",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Is your workload deployed across multiple Availability Zones?",
+            "Do you use multiple AWS Regions for critical workloads?",
+            "Are dependencies distributed to avoid single points of failure?",
+            "Do you have automated failover between locations?"
+        ],
+        implementation_guidance=[
+            "Deploy across multiple Availability Zones by default",
+            "Use multiple Regions for disaster recovery",
+            "Implement automated cross-AZ failover",
+            "Distribute data stores across multiple locations"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_multiaz_region_system.html",
+        related_best_practices=["REL10-BP02", "REL10-BP03"]
+    ),
+    "REL10-BP02": BestPractice(
+        id="REL10-BP02",
+        title="Select the Appropriate Locations for Your Multi-Location Deployment",
+        pillar=Pillar.RELIABILITY,
+        description="For high availability, always deploy your workload components to multiple Availability Zones",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you selected appropriate Availability Zones for deployment?",
+            "Do you understand AZ characteristics and capabilities?",
+            "Are workload components distributed optimally?",
+            "Do you avoid single AZ dependencies?"
+        ],
+        implementation_guidance=[
+            "Use at least two Availability Zones for all deployments",
+            "Understand AZ-specific service availability",
+            "Avoid hard dependencies on single AZs",
+            "Consider latency and bandwidth between AZs"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_single_az_system.html",
+        related_best_practices=["REL10-BP01", "REL10-BP03"]
+    ),
+    "REL10-BP03": BestPractice(
+        id="REL10-BP03",
+        title="Use Bulkhead Architectures to Limit Scope of Impact",
+        pillar=Pillar.RELIABILITY,
+        description="Implement bulkhead architectures to prevent failures from impacting multiple components",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use bulkhead patterns to isolate components?",
+            "Are failure domains clearly defined and limited?",
+            "Do you prevent cascading failures between components?",
+            "Are resource pools isolated to limit blast radius?"
+        ],
+        implementation_guidance=[
+            "Implement service isolation using separate resource pools",
+            "Use circuit breakers to prevent cascading failures",
+            "Isolate critical and non-critical workloads",
+            "Implement resource quotas and limits"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_use_bulkhead.html",
+        related_best_practices=["REL10-BP01", "REL10-BP02"]
+    ),
+    "REL11-BP01": BestPractice(
+        id="REL11-BP01",
+        title="Monitor All Components of the Workload to Detect Failures",
+        pillar=Pillar.RELIABILITY,
+        description="Continuously monitor the health of your workload so that you can quickly identify when failures occur",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you monitor all workload components for health?",
+            "Are failure detection mechanisms comprehensive?",
+            "Do you have real-time alerting for failures?",
+            "Are monitoring thresholds appropriately configured?"
+        ],
+        implementation_guidance=[
+            "Implement comprehensive health checks for all components",
+            "Use CloudWatch for monitoring and alerting",
+            "Set up synthetic monitoring for critical user journeys",
+            "Monitor both technical and business metrics"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_monitoring_health.html",
+        related_best_practices=["REL11-BP02", "REL11-BP03"]
+    ),
+    "REL11-BP02": BestPractice(
+        id="REL11-BP02",
+        title="Fail Over to Healthy Resources",
+        pillar=Pillar.RELIABILITY,
+        description="Ensure that if a resource failure occurs, healthy resources can continue to serve requests",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have automated failover to healthy resources?",
+            "Are failover procedures tested regularly?",
+            "Do you maintain sufficient capacity for failover scenarios?",
+            "Are failover times within acceptable limits?"
+        ],
+        implementation_guidance=[
+            "Implement automated failover using load balancers",
+            "Use Auto Scaling to maintain capacity during failures",
+            "Test failover procedures regularly",
+            "Monitor failover times and success rates"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_failover2good.html",
+        related_best_practices=["REL11-BP01", "REL11-BP03"]
+    ),
+    "REL11-BP03": BestPractice(
+        id="REL11-BP03",
+        title="Automate Healing on All Layers",
+        pillar=Pillar.RELIABILITY,
+        description="Upon detection of a failure, use automated capabilities to perform actions to remediate",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have automated healing mechanisms?",
+            "Are failed components automatically replaced?",
+            "Do you use self-healing architectures?",
+            "Are healing actions monitored and logged?"
+        ],
+        implementation_guidance=[
+            "Use Auto Scaling for automatic instance replacement",
+            "Implement automated remediation with Systems Manager",
+            "Use container orchestration for self-healing",
+            "Monitor and log all automated healing actions"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_auto_healing_system.html",
+        related_best_practices=["REL11-BP01", "REL11-BP02"]
+    ),
+    "REL11-BP04": BestPractice(
+        id="REL11-BP04",
+        title="Rely on the Data Plane and Not the Control Plane During Recovery",
+        pillar=Pillar.RELIABILITY,
+        description="The control plane is used to configure resources, and the data plane is used to deliver service",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you avoid control plane dependencies during recovery?",
+            "Are recovery procedures designed to use data plane operations?",
+            "Do you pre-provision resources to avoid control plane calls?",
+            "Are critical operations independent of control plane availability?"
+        ],
+        implementation_guidance=[
+            "Pre-provision resources to avoid control plane dependencies",
+            "Use data plane operations for critical recovery actions",
+            "Implement static stability patterns",
+            "Cache control plane responses when possible"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_avoid_control_plane.html",
+        related_best_practices=["REL11-BP05"]
+    ),
+    "REL11-BP05": BestPractice(
+        id="REL11-BP05",
+        title="Use Static Stability to Prevent Bimodal Behavior",
+        pillar=Pillar.RELIABILITY,
+        description="Workloads should be statically stable and only operate in a single normal mode",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Does your workload exhibit static stability?",
+            "Do you avoid bimodal behavior patterns?",
+            "Are system behaviors consistent under different conditions?",
+            "Do you pre-provision resources to maintain stability?"
+        ],
+        implementation_guidance=[
+            "Design systems to operate in a single stable mode",
+            "Pre-provision resources to avoid dynamic scaling dependencies",
+            "Avoid conditional logic that creates bimodal behavior",
+            "Test system behavior under various load conditions"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_static_stability.html",
+        related_best_practices=["REL11-BP04"]
+    ),
+    "REL11-BP06": BestPractice(
+        id="REL11-BP06",
+        title="Send Notifications When Events Impact Availability",
+        pillar=Pillar.RELIABILITY,
+        description="Notifications are sent upon the detection of significant events, even if the issue caused by the event was automatically resolved",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you send notifications for availability-impacting events?",
+            "Are notifications sent even for auto-resolved issues?",
+            "Do notifications include relevant context and impact information?",
+            "Are notification recipients appropriate for each event type?"
+        ],
+        implementation_guidance=[
+            "Configure notifications for all availability-impacting events",
+            "Include event context and impact assessment in notifications",
+            "Use appropriate notification channels for different audiences",
+            "Notify even when issues are automatically resolved"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_notifications_sent_system.html",
+        related_best_practices=["REL11-BP07"]
+    ),
+    "REL11-BP07": BestPractice(
+        id="REL11-BP07",
+        title="Architect Your Product to Meet Availability Targets and Uptime Service Level Agreements (SLAs)",
+        pillar=Pillar.RELIABILITY,
+        description="Architect to meet your availability targets and any uptime SLAs you have with your customers",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you defined availability targets and SLAs?",
+            "Is your architecture designed to meet these targets?",
+            "Do you monitor and report on SLA compliance?",
+            "Are availability targets realistic and achievable?"
+        ],
+        implementation_guidance=[
+            "Define clear availability targets and SLAs",
+            "Design architecture to exceed availability requirements",
+            "Implement comprehensive availability monitoring",
+            "Regular review and report on SLA performance"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_service_level_agreements.html",
+        related_best_practices=["REL11-BP06"]
+    ),
+    "REL12-BP01": BestPractice(
+        id="REL12-BP01",
+        title="Use Playbooks to Investigate Failures",
+        pillar=Pillar.RELIABILITY,
+        description="Enable consistent and prompt responses to failure scenarios that are not well understood",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have playbooks for investigating failures?",
+            "Are investigation procedures documented and accessible?",
+            "Do playbooks include escalation procedures?",
+            "Are playbooks updated based on lessons learned?"
+        ],
+        implementation_guidance=[
+            "Create detailed investigation playbooks for common failure scenarios",
+            "Include step-by-step troubleshooting procedures",
+            "Document escalation paths and contact information",
+            "Update playbooks based on incident learnings"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_testing_resiliency_playbook_resiliency.html",
+        related_best_practices=["REL12-BP02"]
+    ),
+    "REL12-BP02": BestPractice(
+        id="REL12-BP02",
+        title="Perform Post-Incident Analysis",
+        pillar=Pillar.RELIABILITY,
+        description="Review customer-impacting events, and identify the contributing factors and preventative action items",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you perform post-incident analysis for all significant events?",
+            "Are root causes identified and documented?",
+            "Do you implement preventative measures based on analysis?",
+            "Are lessons learned shared across teams?"
+        ],
+        implementation_guidance=[
+            "Conduct blameless post-incident reviews",
+            "Use structured root cause analysis methodologies",
+            "Implement corrective actions with clear ownership",
+            "Share learnings across the organization"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_testing_resiliency_rca_resiliency.html",
+        related_best_practices=["REL12-BP01", "REL12-BP03"]
+    ),
+    "REL12-BP03": BestPractice(
+        id="REL12-BP03",
+        title="Test Functional Requirements and Include Resiliency Testing",
+        pillar=Pillar.RELIABILITY,
+        description="Use techniques such as load testing, penetration testing, chaos engineering, and game days",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you perform comprehensive resiliency testing?",
+            "Are load and stress tests included in your testing strategy?",
+            "Do you test failure scenarios and recovery procedures?",
+            "Are testing results used to improve system resilience?"
+        ],
+        implementation_guidance=[
+            "Implement comprehensive load and performance testing",
+            "Use chaos engineering to test failure scenarios",
+            "Conduct regular game days to test incident response",
+            "Test backup and recovery procedures regularly"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_testing_resiliency_test_non_functional.html",
+        related_best_practices=["REL12-BP04", "REL12-BP05"]
+    ),
+    "REL12-BP04": BestPractice(
+        id="REL12-BP04",
+        title="Use Chaos Engineering",
+        pillar=Pillar.RELIABILITY,
+        description="Run chaos engineering experiments regularly to understand how your systems respond to failure",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use chaos engineering to test system resilience?",
+            "Are chaos experiments run regularly and systematically?",
+            "Do you test different types of failure scenarios?",
+            "Are chaos engineering results used to improve system design?"
+        ],
+        implementation_guidance=[
+            "Implement chaos engineering practices using tools like AWS Fault Injection Simulator",
+            "Start with small, controlled experiments",
+            "Test different failure modes systematically",
+            "Use results to improve system resilience"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_testing_resiliency_failure_injection_resiliency.html",
+        related_best_practices=["REL12-BP03", "REL12-BP05"]
+    ),
+    "REL12-BP05": BestPractice(
+        id="REL12-BP05",
+        title="Conduct Game Days Regularly",
+        pillar=Pillar.RELIABILITY,
+        description="Use game days to regularly exercise your procedures for responding to events and failures",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you conduct regular game days?",
+            "Are different failure scenarios tested during game days?",
+            "Do game days include all relevant team members?",
+            "Are game day learnings incorporated into procedures?"
+        ],
+        implementation_guidance=[
+            "Schedule regular game days for different failure scenarios",
+            "Include all relevant teams in game day exercises",
+            "Test both technical and communication procedures",
+            "Document and implement improvements from game days"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_testing_resiliency_game_days_resiliency.html",
+        related_best_practices=["REL12-BP03", "REL12-BP04"]
+    ),
+    "REL13-BP01": BestPractice(
+        id="REL13-BP01",
+        title="Define Recovery Objectives for Downtime and Data Loss",
+        pillar=Pillar.RELIABILITY,
+        description="The workload has a recovery time objective (RTO) and recovery point objective (RPO)",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you defined RTO and RPO for your workload?",
+            "Are recovery objectives aligned with business requirements?",
+            "Do you understand the cost implications of different recovery objectives?",
+            "Are recovery objectives documented and communicated?"
+        ],
+        implementation_guidance=[
+            "Work with business stakeholders to define RTO and RPO",
+            "Document recovery objectives for different failure scenarios",
+            "Understand cost trade-offs for different recovery strategies",
+            "Regularly review and update recovery objectives"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_objective_defined_recovery.html",
+        related_best_practices=["REL13-BP02"]
+    ),
+    "REL13-BP02": BestPractice(
+        id="REL13-BP02",
+        title="Use Defined Recovery Strategies to Meet the Recovery Objectives",
+        pillar=Pillar.RELIABILITY,
+        description="A disaster recovery (DR) strategy has been defined to meet objectives",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have a defined disaster recovery strategy?",
+            "Does your DR strategy meet defined RTO and RPO objectives?",
+            "Are DR procedures documented and accessible?",
+            "Do you have appropriate DR infrastructure provisioned?"
+        ],
+        implementation_guidance=[
+            "Choose appropriate DR strategy (backup/restore, pilot light, warm standby, multi-site)",
+            "Implement DR infrastructure to meet recovery objectives",
+            "Document detailed DR procedures and runbooks",
+            "Ensure DR strategy aligns with business requirements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_disaster_recovery.html",
+        related_best_practices=["REL13-BP01", "REL13-BP03"]
+    ),
+    "REL13-BP03": BestPractice(
+        id="REL13-BP03",
+        title="Test Disaster Recovery Implementation to Validate the Implementation",
+        pillar=Pillar.RELIABILITY,
+        description="Regularly test failover to DR to ensure that RTO and RPO are met",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you regularly test your disaster recovery procedures?",
+            "Are DR tests comprehensive and realistic?",
+            "Do you validate that RTO and RPO objectives are met during tests?",
+            "Are DR test results documented and acted upon?"
+        ],
+        implementation_guidance=[
+            "Schedule regular DR testing exercises",
+            "Test complete end-to-end recovery scenarios",
+            "Measure and validate RTO and RPO during tests",
+            "Document test results and implement improvements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_dr_tested.html",
+        related_best_practices=["REL13-BP02", "REL13-BP04"]
+    ),
+    "REL13-BP04": BestPractice(
+        id="REL13-BP04",
+        title="Manage Configuration Drift at the DR Site or Region",
+        pillar=Pillar.RELIABILITY,
+        description="Ensure that the infrastructure, data, and configuration are as needed at the DR site or region",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you manage configuration drift between primary and DR sites?",
+            "Are DR site configurations kept in sync with primary?",
+            "Do you have automated processes to detect configuration drift?",
+            "Are configuration changes replicated to DR sites?"
+        ],
+        implementation_guidance=[
+            "Use infrastructure as code to maintain consistency",
+            "Implement automated configuration drift detection",
+            "Establish processes to sync configuration changes",
+            "Regularly validate DR site configuration"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_config_drift.html",
+        related_best_practices=["REL13-BP03", "REL13-BP05"]
+    ),
+    "REL13-BP05": BestPractice(
+        id="REL13-BP05",
+        title="Automate Recovery",
+        pillar=Pillar.RELIABILITY,
+        description="Use AWS or third-party tools to automate system recovery and reduce recovery time",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have automated recovery procedures?",
+            "Are recovery processes triggered automatically when appropriate?",
+            "Do you minimize manual intervention in recovery scenarios?",
+            "Are automated recovery procedures tested regularly?"
+        ],
+        implementation_guidance=[
+            "Implement automated failover and recovery procedures",
+            "Use AWS services like Route 53 health checks for automatic failover",
+            "Minimize manual steps in recovery processes",
+            "Test automated recovery procedures regularly"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_planning_for_recovery_auto_recovery.html",
+        related_best_practices=["REL13-BP04"]
+    )
 }
