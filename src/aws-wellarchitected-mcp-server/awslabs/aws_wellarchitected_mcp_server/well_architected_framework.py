@@ -1899,6 +1899,240 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_auto_protection.html",
         related_best_practices=["SEC04-BP01", "SEC04-BP03"]
     ),
+    "SEC07-BP01": BestPractice(
+        id="SEC07-BP01",
+        title="Identify the Data Within Your Workload",
+        pillar=Pillar.SECURITY,
+        description="Identify and understand the data within your workload and its sensitivity",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you identified all data within your workload?",
+            "Do you understand the sensitivity and classification of your data?",
+            "Are data flows and data stores documented?",
+            "Do you know where sensitive data is processed and stored?"
+        ],
+        implementation_guidance=[
+            "Conduct data discovery to identify all data within your workload",
+            "Use AWS Macie for automated data discovery and classification",
+            "Document data flows and create data maps",
+            "Classify data based on sensitivity and regulatory requirements"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_data_classification_identify_data.html",
+        related_best_practices=["SEC07-BP02", "SEC07-BP03"]
+    ),
+    "SEC07-BP02": BestPractice(
+        id="SEC07-BP02",
+        title="Define Data Protection Controls",
+        pillar=Pillar.SECURITY,
+        description="Define data protection controls based on data classification",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you defined protection controls based on data classification?",
+            "Are different protection levels applied to different data types?",
+            "Do you have data handling procedures for each classification?",
+            "Are protection controls aligned with regulatory requirements?"
+        ],
+        implementation_guidance=[
+            "Define protection controls for each data classification level",
+            "Implement appropriate encryption for different data types",
+            "Create data handling procedures and access controls",
+            "Align controls with compliance requirements like GDPR or HIPAA"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_data_classification_define_protection.html",
+        related_best_practices=["SEC07-BP01", "SEC08-BP01", "SEC09-BP01"]
+    ),
+    "SEC07-BP03": BestPractice(
+        id="SEC07-BP03",
+        title="Automate Data Classification",
+        pillar=Pillar.SECURITY,
+        description="Automate data classification to ensure consistent and scalable protection",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use automated tools for data classification?",
+            "Are classification rules consistently applied across your workload?",
+            "Do you have automated tagging based on data classification?",
+            "Are classification changes automatically detected and handled?"
+        ],
+        implementation_guidance=[
+            "Use AWS Macie for automated data classification",
+            "Implement automated tagging based on classification results",
+            "Create classification rules and policies",
+            "Set up automated alerts for classification changes"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_data_classification_auto_classification.html",
+        related_best_practices=["SEC07-BP01", "SEC07-BP04"]
+    ),
+    "SEC07-BP04": BestPractice(
+        id="SEC07-BP04",
+        title="Define Data Lifecycle Management",
+        pillar=Pillar.SECURITY,
+        description="Define data lifecycle management based on classification and requirements",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have defined data lifecycle policies?",
+            "Are retention periods based on data classification and requirements?",
+            "Do you have secure data disposal procedures?",
+            "Are lifecycle policies automated where possible?"
+        ],
+        implementation_guidance=[
+            "Define data retention policies based on classification",
+            "Use S3 lifecycle policies for automated data management",
+            "Implement secure data deletion procedures",
+            "Automate lifecycle management where possible"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_data_classification_lifecycle_management.html",
+        related_best_practices=["SEC07-BP03"]
+    ),
+    "SEC08-BP01": BestPractice(
+        id="SEC08-BP01",
+        title="Implement Secure Key Management",
+        pillar=Pillar.SECURITY,
+        description="Implement secure key and certificate management for data at rest",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you use a centralized key management system?",
+            "Are encryption keys properly managed and rotated?",
+            "Do you have separation of duties for key management?",
+            "Are keys protected with appropriate access controls?"
+        ],
+        implementation_guidance=[
+            "Use AWS KMS for centralized key management",
+            "Implement automatic key rotation",
+            "Use IAM policies for key access control",
+            "Consider AWS CloudHSM for high-security requirements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_rest_key_mgmt.html",
+        related_best_practices=["SEC08-BP02", "SEC09-BP01"]
+    ),
+    "SEC08-BP02": BestPractice(
+        id="SEC08-BP02",
+        title="Enforce Encryption at Rest",
+        pillar=Pillar.SECURITY,
+        description="Enforce encryption at rest for all sensitive data",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Is all sensitive data encrypted at rest?",
+            "Do you use strong encryption algorithms?",
+            "Are encryption keys managed securely?",
+            "Is encryption enforced through policies and controls?"
+        ],
+        implementation_guidance=[
+            "Enable encryption for all AWS services storing data",
+            "Use AES-256 or equivalent strong encryption",
+            "Implement encryption policies and compliance checks",
+            "Use AWS Config rules to enforce encryption requirements"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_rest_encrypt.html",
+        related_best_practices=["SEC08-BP01", "SEC08-BP03"]
+    ),
+    "SEC08-BP03": BestPractice(
+        id="SEC08-BP03",
+        title="Automate Data at Rest Protection",
+        pillar=Pillar.SECURITY,
+        description="Automate data at rest protection to ensure consistent security",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you automatically apply encryption to new data stores?",
+            "Are encryption policies enforced automatically?",
+            "Do you have automated compliance checking for data protection?",
+            "Are encryption violations automatically detected and remediated?"
+        ],
+        implementation_guidance=[
+            "Use AWS Config rules for automated encryption compliance",
+            "Implement automatic encryption for new resources",
+            "Set up automated remediation for encryption violations",
+            "Use AWS Security Hub for centralized compliance monitoring"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_rest_automate_protection.html",
+        related_best_practices=["SEC08-BP02", "SEC08-BP04"]
+    ),
+    "SEC08-BP04": BestPractice(
+        id="SEC08-BP04",
+        title="Enforce Access Control for Data at Rest",
+        pillar=Pillar.SECURITY,
+        description="Enforce access control for data at rest using authentication and authorization",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you enforce access control for data at rest?",
+            "Are access permissions based on least privilege principles?",
+            "Do you use strong authentication for data access?",
+            "Are data access activities logged and monitored?"
+        ],
+        implementation_guidance=[
+            "Use IAM policies for fine-grained access control",
+            "Implement resource-based policies for data stores",
+            "Enable access logging for all data stores",
+            "Use AWS CloudTrail to monitor data access activities"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_rest_access_control.html",
+        related_best_practices=["SEC08-BP03"]
+    ),
+    "SEC09-BP01": BestPractice(
+        id="SEC09-BP01",
+        title="Implement Secure Key and Certificate Management",
+        pillar=Pillar.SECURITY,
+        description="Implement secure key and certificate management for data in transit",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you use secure key and certificate management for data in transit?",
+            "Are TLS certificates properly managed and rotated?",
+            "Do you use strong cryptographic protocols?",
+            "Are certificates validated and trusted?"
+        ],
+        implementation_guidance=[
+            "Use AWS Certificate Manager for TLS certificate management",
+            "Implement automatic certificate renewal",
+            "Use strong TLS versions (1.2 or higher)",
+            "Validate certificate chains and revocation status"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_transit_key_cert_mgmt.html",
+        related_best_practices=["SEC09-BP02", "SEC08-BP01"]
+    ),
+    "SEC09-BP02": BestPractice(
+        id="SEC09-BP02",
+        title="Enforce Encryption in Transit",
+        pillar=Pillar.SECURITY,
+        description="Enforce encryption in transit for all sensitive data",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Is all sensitive data encrypted in transit?",
+            "Do you use strong encryption protocols?",
+            "Are all communication channels secured?",
+            "Do you enforce encryption policies?"
+        ],
+        implementation_guidance=[
+            "Use TLS 1.2 or higher for all communications",
+            "Implement HTTPS for all web traffic",
+            "Use VPN or AWS PrivateLink for internal communications",
+            "Enforce encryption policies through security groups and NACLs"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_transit_encrypt.html",
+        related_best_practices=["SEC09-BP01", "SEC09-BP03"]
+    ),
+    "SEC09-BP03": BestPractice(
+        id="SEC09-BP03",
+        title="Authenticate Network Communications",
+        pillar=Pillar.SECURITY,
+        description="Authenticate network communications to ensure data integrity and authenticity",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you authenticate network communications?",
+            "Are communication endpoints verified?",
+            "Do you use mutual authentication where appropriate?",
+            "Are authentication mechanisms regularly updated?"
+        ],
+        implementation_guidance=[
+            "Use mutual TLS (mTLS) for service-to-service communication",
+            "Implement certificate-based authentication",
+            "Use AWS App Mesh or service mesh for secure service communication",
+            "Regularly rotate authentication credentials"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_transit_authentication.html",
+        related_best_practices=["SEC09-BP02"]
+    ),
 
     
     # Reliability

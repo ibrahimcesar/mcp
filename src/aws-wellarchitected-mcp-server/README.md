@@ -308,6 +308,17 @@ The server evaluates 12+ core best practices across all pillars:
 - **SEC06-BP02**: Configure Service and Application Logging
 - **SEC06-BP03**: Analyze Logs Centrally
 - **SEC06-BP04**: Implement Actionable Security Events
+- **SEC07-BP01**: Identify the Data Within Your Workload *(requires user input)*
+- **SEC07-BP02**: Define Data Protection Controls *(requires user input)*
+- **SEC07-BP03**: Automate Data Classification
+- **SEC07-BP04**: Define Data Lifecycle Management *(requires user input)*
+- **SEC08-BP01**: Implement Secure Key Management
+- **SEC08-BP02**: Enforce Encryption at Rest
+- **SEC08-BP03**: Automate Data at Rest Protection
+- **SEC08-BP04**: Enforce Access Control for Data at Rest
+- **SEC09-BP01**: Implement Secure Key and Certificate Management
+- **SEC09-BP02**: Enforce Encryption in Transit
+- **SEC09-BP03**: Authenticate Network Communications
 - **SEC01**: Strong Identity Foundation
 - **SEC02**: Security at All Layers
 
