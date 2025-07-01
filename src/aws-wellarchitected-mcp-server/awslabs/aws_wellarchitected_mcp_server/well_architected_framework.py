@@ -29,6 +29,7 @@ class BestPractice(NamedTuple):
     implementation_guidance: List[str]
     requires_user_input: bool = False
     url: str = ""
+    related_best_practices: List[str] = []
 
 
 # Well-Architected Framework Best Practices
@@ -1440,40 +1441,171 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
     ),
     
     # Security
-    "SEC01": BestPractice(
-        id="SEC01",
-        title="Implement Strong Identity Foundation",
+    "SEC01-BP01": BestPractice(
+        id="SEC01-BP01",
+        title="Separate Workloads Using Accounts",
         pillar=Pillar.SECURITY,
-        description="Apply the principle of least privilege and enforce separation of duties",
+        description="Organize workloads in separate accounts and centralize identity management",
         risk_level=RiskLevel.HIGH,
         questions=[
-            "Are you using IAM roles instead of users for applications?",
-            "Do you follow the principle of least privilege?",
-            "Is multi-factor authentication enabled?"
+            "Are you using separate AWS accounts for different workloads or environments?",
+            "Do you have a multi-account strategy with AWS Organizations?",
+            "Are accounts organized by business function, compliance, or risk profile?",
+            "Do you centralize identity management across accounts?"
         ],
         implementation_guidance=[
-            "Use IAM roles for EC2 instances and Lambda functions",
-            "Implement fine-grained permissions",
-            "Enable MFA for all human users"
-        ]
+            "Use AWS Organizations to manage multiple accounts",
+            "Separate production, development, and testing environments into different accounts",
+            "Organize accounts by business unit, application, or compliance requirements",
+            "Use AWS SSO for centralized identity management across accounts"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_multi_accounts.html"
     ),
-    "SEC02": BestPractice(
-        id="SEC02",
-        title="Apply Security at All Layers",
+    "SEC01-BP02": BestPractice(
+        id="SEC01-BP02",
+        title="Secure Account Root User and Properties",
         pillar=Pillar.SECURITY,
-        description="Implement defense in depth with multiple security controls",
+        description="Secure the root user and configure account-level security properties",
         risk_level=RiskLevel.HIGH,
         questions=[
-            "Are you using VPCs with proper network segmentation?",
-            "Do you have WAF protection for web applications?",
-            "Are security groups configured with minimal access?"
+            "Is the root user secured with MFA and strong password?",
+            "Are root user access keys deleted or secured?",
+            "Are account contact details configured?",
+            "Are account-level security settings properly configured?"
         ],
         implementation_guidance=[
-            "Use VPCs with private subnets for sensitive resources",
-            "Implement AWS WAF for web application protection",
-            "Configure security groups with specific port and protocol access"
-        ]
+            "Enable MFA for root user and use strong, unique password",
+            "Delete root user access keys or store them securely",
+            "Configure alternate contacts for billing, operations, and security",
+            "Enable AWS Config and CloudTrail at account level"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_aws_account.html"
     ),
+    "SEC01-BP03": BestPractice(
+        id="SEC01-BP03",
+        title="Identify and Validate Control Objectives",
+        pillar=Pillar.SECURITY,
+        description="Identify and validate security control objectives based on compliance requirements",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you identified security control objectives for your workload?",
+            "Are control objectives aligned with compliance requirements?",
+            "Do you validate that controls meet their objectives?",
+            "Are control objectives documented and communicated?"
+        ],
+        implementation_guidance=[
+            "Define security control objectives based on business and compliance requirements",
+            "Map controls to frameworks like SOC 2, PCI DSS, or NIST",
+            "Implement validation processes to ensure controls meet objectives",
+            "Document control objectives and communicate to stakeholders"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_control_objectives.html"
+    ),
+    "SEC01-BP04": BestPractice(
+        id="SEC01-BP04",
+        title="Stay Up to Date with Security Threats and Recommendations",
+        pillar=Pillar.SECURITY,
+        description="Stay informed about current security threats and AWS security recommendations",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you stay current with security threats and vulnerabilities?",
+            "Are you subscribed to AWS security bulletins and advisories?",
+            "Do you have processes to evaluate and respond to new threats?",
+            "Are security recommendations implemented in a timely manner?"
+        ],
+        implementation_guidance=[
+            "Subscribe to AWS Security Bulletins and security advisories",
+            "Monitor threat intelligence sources and security research",
+            "Establish processes to evaluate and respond to new security threats",
+            "Regularly review and implement AWS security recommendations"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_updated_threats.html"
+    ),
+    "SEC01-BP05": BestPractice(
+        id="SEC01-BP05",
+        title="Reduce Security Management Scope",
+        pillar=Pillar.SECURITY,
+        description="Reduce security management scope by using managed services",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Are you using AWS managed services to reduce security management overhead?",
+            "Do you leverage managed services for security functions like patching?",
+            "Are you using serverless architectures where appropriate?",
+            "Do you minimize the attack surface through service selection?"
+        ],
+        implementation_guidance=[
+            "Use managed services like RDS, ECS Fargate, and Lambda to reduce management overhead",
+            "Leverage AWS managed security services like GuardDuty and Security Hub",
+            "Choose serverless architectures to minimize infrastructure management",
+            "Use managed services for patching, backup, and monitoring"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_reduce_management_scope.html"
+    ),
+    "SEC01-BP06": BestPractice(
+        id="SEC01-BP06",
+        title="Automate Testing and Validation of Security Controls",
+        pillar=Pillar.SECURITY,
+        description="Automate testing and validation of security controls in pipelines",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are security controls tested automatically in your deployment pipeline?",
+            "Do you have automated security testing integrated into CI/CD?",
+            "Are security validations performed before production deployment?",
+            "Do you use infrastructure as code for consistent security configurations?"
+        ],
+        implementation_guidance=[
+            "Integrate security testing tools into CI/CD pipelines",
+            "Use AWS Config Rules to validate security configurations",
+            "Implement automated security scanning with tools like Amazon Inspector",
+            "Use infrastructure as code to ensure consistent security configurations"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_automate_security_controls.html"
+    ),
+    "SEC01-BP07": BestPractice(
+        id="SEC01-BP07",
+        title="Identify Threats and Prioritize Mitigations Using a Threat Model",
+        pillar=Pillar.SECURITY,
+        description="Perform threat modeling to identify and prioritize potential security threats",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you perform threat modeling for your workloads?",
+            "Are threats identified and prioritized based on risk?",
+            "Do you have mitigation strategies for identified threats?",
+            "Is threat modeling updated as your architecture evolves?"
+        ],
+        implementation_guidance=[
+            "Perform structured threat modeling using frameworks like STRIDE",
+            "Identify and prioritize threats based on likelihood and impact",
+            "Develop mitigation strategies for high-priority threats",
+            "Update threat models as architecture and threat landscape evolve"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_threat_model.html"
+    ),
+    "SEC01-BP08": BestPractice(
+        id="SEC01-BP08",
+        title="Evaluate and Implement New Security Services and Features",
+        pillar=Pillar.SECURITY,
+        description="Regularly evaluate and implement new AWS security services and features",
+        risk_level=RiskLevel.LOW,
+        questions=[
+            "Do you regularly evaluate new AWS security services and features?",
+            "Are new security capabilities assessed for your workloads?",
+            "Do you have a process for implementing beneficial security features?",
+            "Are security service updates and new features tracked?"
+        ],
+        implementation_guidance=[
+            "Regularly review AWS security service announcements and updates",
+            "Evaluate new security features for applicability to your workloads",
+            "Establish processes for testing and implementing new security capabilities",
+            "Stay informed about security service roadmaps and upcoming features"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_implement_services_features.html"
+    ),
+
     
     # Reliability
     "REL01": BestPractice(

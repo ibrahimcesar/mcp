@@ -287,6 +287,14 @@ The server evaluates 12+ core best practices across all pillars:
 - **OPS02**: Comprehensive Monitoring
 
 ### 🔒 Security
+- **SEC01-BP01**: Separate Workloads Using Accounts
+- **SEC01-BP02**: Secure Account Root User and Properties
+- **SEC01-BP03**: Identify and Validate Control Objectives *(requires user input)*
+- **SEC01-BP04**: Stay Up to Date with Security Threats *(requires user input)*
+- **SEC01-BP05**: Reduce Security Management Scope
+- **SEC01-BP06**: Automate Testing and Validation of Security Controls
+- **SEC01-BP07**: Identify Threats and Prioritize Mitigations *(requires user input)*
+- **SEC01-BP08**: Evaluate and Implement New Security Services *(requires user input)*
 - **SEC01**: Strong Identity Foundation
 - **SEC02**: Security at All Layers
 
