@@ -2133,6 +2133,353 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_data_transit_authentication.html",
         related_best_practices=["SEC09-BP02"]
     ),
+    "SEC10-BP01": BestPractice(
+        id="SEC10-BP01",
+        title="Identify Key Personnel and External Resources",
+        pillar=Pillar.SECURITY,
+        description="Identify key personnel and external resources for incident response",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Have you identified key personnel for incident response?",
+            "Do you have external resources and contacts identified?",
+            "Are roles and responsibilities clearly defined?",
+            "Do you have 24/7 contact information available?"
+        ],
+        implementation_guidance=[
+            "Create incident response team with defined roles",
+            "Establish relationships with external security experts",
+            "Maintain updated contact lists and escalation procedures",
+            "Define clear responsibilities for each team member"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_identify_personnel.html",
+        related_best_practices=["SEC10-BP02", "SEC10-BP04"]
+    ),
+    "SEC10-BP02": BestPractice(
+        id="SEC10-BP02",
+        title="Develop Incident Management Plans",
+        pillar=Pillar.SECURITY,
+        description="Develop and maintain incident management plans and procedures",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have documented incident management plans?",
+            "Are plans regularly updated and tested?",
+            "Do plans cover different types of security incidents?",
+            "Are communication procedures clearly defined?"
+        ],
+        implementation_guidance=[
+            "Create comprehensive incident response plans",
+            "Define incident classification and severity levels",
+            "Establish communication and notification procedures",
+            "Regularly review and update plans based on lessons learned"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_develop_management_plans.html",
+        related_best_practices=["SEC10-BP01", "SEC10-BP03", "SEC10-BP04"]
+    ),
+    "SEC10-BP03": BestPractice(
+        id="SEC10-BP03",
+        title="Prepare Forensic Capabilities",
+        pillar=Pillar.SECURITY,
+        description="Prepare forensic capabilities to support incident investigation",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have forensic capabilities prepared?",
+            "Are logs and evidence collection procedures defined?",
+            "Do you have tools and expertise for forensic analysis?",
+            "Are legal and compliance requirements considered?"
+        ],
+        implementation_guidance=[
+            "Establish forensic investigation procedures",
+            "Ensure comprehensive logging for forensic analysis",
+            "Prepare forensic tools and analysis capabilities",
+            "Consider legal and compliance requirements for evidence handling"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_prepare_forensic.html",
+        related_best_practices=["SEC10-BP02", "SEC10-BP06"]
+    ),
+    "SEC10-BP04": BestPractice(
+        id="SEC10-BP04",
+        title="Develop and Test Security Incident Response Playbooks",
+        pillar=Pillar.SECURITY,
+        description="Develop and test security incident response playbooks",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have incident response playbooks for common scenarios?",
+            "Are playbooks regularly tested and updated?",
+            "Do playbooks include step-by-step procedures?",
+            "Are playbooks accessible during incidents?"
+        ],
+        implementation_guidance=[
+            "Create playbooks for common incident types",
+            "Include detailed step-by-step response procedures",
+            "Test playbooks through tabletop exercises",
+            "Keep playbooks updated and easily accessible"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_playbooks.html",
+        related_best_practices=["SEC10-BP01", "SEC10-BP02", "SEC10-BP07"]
+    ),
+    "SEC10-BP05": BestPractice(
+        id="SEC10-BP05",
+        title="Pre-provision Access",
+        pillar=Pillar.SECURITY,
+        description="Pre-provision access for incident response team members",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do incident responders have pre-provisioned access?",
+            "Are access permissions appropriate for incident response?",
+            "Is access regularly reviewed and updated?",
+            "Are emergency access procedures defined?"
+        ],
+        implementation_guidance=[
+            "Pre-provision appropriate access for incident response team",
+            "Use break-glass access procedures for emergencies",
+            "Regularly review and update access permissions",
+            "Implement just-in-time access where possible"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_pre_provision_access.html",
+        related_best_practices=["SEC10-BP06"]
+    ),
+    "SEC10-BP06": BestPractice(
+        id="SEC10-BP06",
+        title="Pre-deploy Tools",
+        pillar=Pillar.SECURITY,
+        description="Pre-deploy tools and resources for incident response",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Are incident response tools pre-deployed and ready?",
+            "Do you have automated response capabilities?",
+            "Are tools regularly tested and updated?",
+            "Are backup tools and procedures available?"
+        ],
+        implementation_guidance=[
+            "Pre-deploy incident response tools and automation",
+            "Use AWS Systems Manager for automated response",
+            "Regularly test and update response tools",
+            "Maintain backup tools and manual procedures"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_pre_deploy_tools.html",
+        related_best_practices=["SEC10-BP03", "SEC10-BP05"]
+    ),
+    "SEC10-BP07": BestPractice(
+        id="SEC10-BP07",
+        title="Run Game Days",
+        pillar=Pillar.SECURITY,
+        description="Run game days to test incident response capabilities",
+        risk_level=RiskLevel.LOW,
+        questions=[
+            "Do you regularly conduct incident response game days?",
+            "Are different incident scenarios tested?",
+            "Do you capture lessons learned from exercises?",
+            "Are improvements implemented based on exercise results?"
+        ],
+        implementation_guidance=[
+            "Conduct regular incident response exercises",
+            "Test different incident scenarios and playbooks",
+            "Capture lessons learned and improvement opportunities",
+            "Update procedures based on exercise results"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_run_game_days.html",
+        related_best_practices=["SEC10-BP04"]
+    ),
+    "SEC10-BP08": BestPractice(
+        id="SEC10-BP08",
+        title="Establish a Framework for Learning from Incidents",
+        pillar=Pillar.SECURITY,
+        description="Establish a framework for learning from security incidents",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have a framework for learning from incidents?",
+            "Are post-incident reviews conducted?",
+            "Are lessons learned documented and shared?",
+            "Are improvements implemented based on incident analysis?"
+        ],
+        implementation_guidance=[
+            "Conduct post-incident reviews for all security incidents",
+            "Document lessons learned and improvement opportunities",
+            "Share learnings across teams and organization",
+            "Implement improvements to prevent similar incidents"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_incident_response_establish_incident_framework.html",
+        related_best_practices=["SEC10-BP07"]
+    ),
+    "SEC11-BP01": BestPractice(
+        id="SEC11-BP01",
+        title="Train for Application Security",
+        pillar=Pillar.SECURITY,
+        description="Train development teams on application security best practices",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do development teams receive application security training?",
+            "Is training regularly updated with current threats?",
+            "Are secure coding practices taught and reinforced?",
+            "Do you measure training effectiveness?"
+        ],
+        implementation_guidance=[
+            "Provide regular application security training for developers",
+            "Include secure coding practices and common vulnerabilities",
+            "Update training content based on current threat landscape",
+            "Measure and track training effectiveness"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_train_for_application_security.html",
+        related_best_practices=["SEC11-BP08"]
+    ),
+    "SEC11-BP02": BestPractice(
+        id="SEC11-BP02",
+        title="Automate Testing Throughout the Development and Release Lifecycle",
+        pillar=Pillar.SECURITY,
+        description="Automate security testing throughout the development and release lifecycle",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you have automated security testing in your CI/CD pipeline?",
+            "Are both static and dynamic security tests performed?",
+            "Are security tests run at multiple stages of development?",
+            "Are test results integrated into development workflows?"
+        ],
+        implementation_guidance=[
+            "Integrate SAST and DAST tools into CI/CD pipelines",
+            "Perform security testing at multiple development stages",
+            "Use AWS CodeGuru and other automated security testing tools",
+            "Fail builds on critical security findings"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_automate_testing_throughout_lifecycle.html",
+        related_best_practices=["SEC11-BP03", "SEC11-BP04"]
+    ),
+    "SEC11-BP03": BestPractice(
+        id="SEC11-BP03",
+        title="Perform Regular Penetration Testing",
+        pillar=Pillar.SECURITY,
+        description="Perform regular penetration testing to identify security vulnerabilities",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you perform regular penetration testing?",
+            "Are tests conducted by qualified security professionals?",
+            "Do you test both applications and infrastructure?",
+            "Are findings remediated in a timely manner?"
+        ],
+        implementation_guidance=[
+            "Conduct regular penetration testing by qualified professionals",
+            "Test both applications and underlying infrastructure",
+            "Follow AWS penetration testing guidelines",
+            "Remediate findings based on risk and severity"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_perform_regular_penetration_testing.html",
+        related_best_practices=["SEC11-BP02"]
+    ),
+    "SEC11-BP04": BestPractice(
+        id="SEC11-BP04",
+        title="Perform Manual Code Reviews",
+        pillar=Pillar.SECURITY,
+        description="Perform manual code reviews to identify security issues",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you perform manual security-focused code reviews?",
+            "Are reviewers trained in secure coding practices?",
+            "Do reviews focus on security-critical code paths?",
+            "Are review findings tracked and remediated?"
+        ],
+        implementation_guidance=[
+            "Implement mandatory security-focused code reviews",
+            "Train reviewers on secure coding practices and common vulnerabilities",
+            "Focus reviews on security-critical code and high-risk changes",
+            "Use code review tools to track findings and remediation"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_manual_code_reviews.html",
+        related_best_practices=["SEC11-BP02"]
+    ),
+    "SEC11-BP05": BestPractice(
+        id="SEC11-BP05",
+        title="Centralize Services for Packages and Dependencies",
+        pillar=Pillar.SECURITY,
+        description="Centralize services for managing packages and dependencies",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you use centralized package and dependency management?",
+            "Are packages scanned for vulnerabilities?",
+            "Do you have approved package repositories?",
+            "Are dependency updates managed centrally?"
+        ],
+        implementation_guidance=[
+            "Use centralized package repositories and registries",
+            "Implement vulnerability scanning for packages and dependencies",
+            "Maintain approved package lists and versions",
+            "Automate dependency updates and security patches"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_centralize_services_for_packages_and_dependencies.html",
+        related_best_practices=["SEC11-BP06"]
+    ),
+    "SEC11-BP06": BestPractice(
+        id="SEC11-BP06",
+        title="Deploy Software Programmatically",
+        pillar=Pillar.SECURITY,
+        description="Deploy software programmatically to reduce security risks",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you deploy software programmatically?",
+            "Are deployments automated and repeatable?",
+            "Do you use infrastructure as code for deployments?",
+            "Are deployment processes secured and audited?"
+        ],
+        implementation_guidance=[
+            "Use automated deployment pipelines",
+            "Implement infrastructure as code for consistent deployments",
+            "Secure deployment processes with appropriate access controls",
+            "Audit and log all deployment activities"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_deploy_software_programmatically.html",
+        related_best_practices=["SEC11-BP05", "SEC11-BP07"]
+    ),
+    "SEC11-BP07": BestPractice(
+        id="SEC11-BP07",
+        title="Regularly Assess Security Properties of the Deployment Pipeline",
+        pillar=Pillar.SECURITY,
+        description="Regularly assess security properties of the deployment pipeline",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you regularly assess your deployment pipeline security?",
+            "Are pipeline components secured and updated?",
+            "Do you monitor pipeline for security events?",
+            "Are pipeline access controls regularly reviewed?"
+        ],
+        implementation_guidance=[
+            "Regularly assess deployment pipeline security",
+            "Keep pipeline components updated and secured",
+            "Monitor pipeline activities for security events",
+            "Review and update pipeline access controls regularly"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_regularly_assess_security_properties_of_pipelines.html",
+        related_best_practices=["SEC11-BP06"]
+    ),
+    "SEC11-BP08": BestPractice(
+        id="SEC11-BP08",
+        title="Build a Program that Embeds Security Ownership in Workload Teams",
+        pillar=Pillar.SECURITY,
+        description="Build a program that embeds security ownership in workload teams",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do workload teams have embedded security ownership?",
+            "Are security responsibilities clearly defined for each team?",
+            "Do teams have security champions or liaisons?",
+            "Is security integrated into team processes and culture?"
+        ],
+        implementation_guidance=[
+            "Establish security champions within each workload team",
+            "Define clear security responsibilities for team members",
+            "Integrate security into team processes and workflows",
+            "Provide teams with security tools and training"
+        ],
+        requires_user_input=True,
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_appsec_build_program_that_embeds_security_ownership_in_teams.html",
+        related_best_practices=["SEC11-BP01"]
+    ),
 
     
     # Reliability

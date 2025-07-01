@@ -319,6 +319,22 @@ The server evaluates 12+ core best practices across all pillars:
 - **SEC09-BP01**: Implement Secure Key and Certificate Management
 - **SEC09-BP02**: Enforce Encryption in Transit
 - **SEC09-BP03**: Authenticate Network Communications
+- **SEC10-BP01**: Identify Key Personnel and External Resources *(requires user input)*
+- **SEC10-BP02**: Develop Incident Management Plans *(requires user input)*
+- **SEC10-BP03**: Prepare Forensic Capabilities *(requires user input)*
+- **SEC10-BP04**: Develop and Test Security Incident Response Playbooks *(requires user input)*
+- **SEC10-BP05**: Pre-provision Access *(requires user input)*
+- **SEC10-BP06**: Pre-deploy Tools
+- **SEC10-BP07**: Run Game Days *(requires user input)*
+- **SEC10-BP08**: Establish a Framework for Learning from Incidents *(requires user input)*
+- **SEC11-BP01**: Train for Application Security *(requires user input)*
+- **SEC11-BP02**: Automate Testing Throughout the Development and Release Lifecycle
+- **SEC11-BP03**: Perform Regular Penetration Testing *(requires user input)*
+- **SEC11-BP04**: Perform Manual Code Reviews *(requires user input)*
+- **SEC11-BP05**: Centralize Services for Packages and Dependencies
+- **SEC11-BP06**: Deploy Software Programmatically
+- **SEC11-BP07**: Regularly Assess Security Properties of the Deployment Pipeline
+- **SEC11-BP08**: Build a Program that Embeds Security Ownership in Workload Teams *(requires user input)*
 - **SEC01**: Strong Identity Foundation
 - **SEC02**: Security at All Layers
 
