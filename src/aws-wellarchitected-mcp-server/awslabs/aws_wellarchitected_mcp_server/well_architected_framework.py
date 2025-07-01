@@ -1472,7 +1472,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Organize accounts by business unit, application, or compliance requirements",
             "Use AWS SSO for centralized identity management across accounts"
         ],
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_multi_accounts.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_multi_accounts.html",
+        related_best_practices=["SEC01-BP02"]
     ),
     "SEC01-BP02": BestPractice(
         id="SEC01-BP02",
@@ -1492,7 +1493,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Configure alternate contacts for billing, operations, and security",
             "Enable AWS Config and CloudTrail at account level"
         ],
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_aws_account.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_aws_account.html",
+        related_best_practices=["SEC01-BP01"]
     ),
     "SEC01-BP03": BestPractice(
         id="SEC01-BP03",
@@ -1513,7 +1515,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Document control objectives and communicate to stakeholders"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_control_objectives.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_control_objectives.html",
+        related_best_practices=["OPS01-BP04", "SEC01-BP06", "SEC07-BP02", "SEC10-BP03"]
     ),
     "SEC01-BP04": BestPractice(
         id="SEC01-BP04",
@@ -1534,7 +1537,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Regularly review and implement AWS security recommendations"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_updated_threats.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_updated_threats.html",
+        related_best_practices=["SEC01-BP07", "SEC01-BP08"]
     ),
     "SEC01-BP05": BestPractice(
         id="SEC01-BP05",
@@ -1554,7 +1558,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Choose serverless architectures to minimize infrastructure management",
             "Use managed services for patching, backup, and monitoring"
         ],
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_reduce_management_scope.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_reduce_management_scope.html",
+        related_best_practices=["SEC01-BP06"]
     ),
     "SEC01-BP06": BestPractice(
         id="SEC01-BP06",
@@ -1574,7 +1579,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Implement automated security scanning with tools like Amazon Inspector",
             "Use infrastructure as code to ensure consistent security configurations"
         ],
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_automate_security_controls.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_automate_security_controls.html",
+        related_best_practices=["SEC01-BP03", "SEC01-BP05", "SEC07-BP02", "SEC10-BP03"]
     ),
     "SEC01-BP07": BestPractice(
         id="SEC01-BP07",
@@ -1595,7 +1601,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Update threat models as architecture and threat landscape evolve"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_threat_model.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_threat_model.html",
+        related_best_practices=["OPS01-BP05", "SEC01-BP04"]
     ),
     "SEC01-BP08": BestPractice(
         id="SEC01-BP08",
@@ -1616,7 +1623,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Stay informed about security service roadmaps and upcoming features"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_implement_services_features.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_implement_services_features.html",
+        related_best_practices=["SEC01-BP04"]
     ),
 
     
