@@ -54,7 +54,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Review historical customer support data to inform decisions"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_ext_cust_needs.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_ext_cust_needs.html",
+        related_best_practices=["OPS11-BP03"]
     ),
     "OPS01-BP02": BestPractice(
         id="OPS01-BP02",
@@ -75,7 +76,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Regularly review and update priorities as needs evolve"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_int_cust_needs.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_int_cust_needs.html",
+        related_best_practices=["OPS11-BP03"]
     ),
     "OPS01-BP03": BestPractice(
         id="OPS01-BP03",
@@ -117,7 +119,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Educate team members on compliance requirements for architectural decisions"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_compliance_reqs.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_compliance_reqs.html",
+        related_best_practices=["SEC01-BP03", "SEC07-BP02", "SEC10-BP03"]
     ),
     "OPS01-BP05": BestPractice(
         id="OPS01-BP05",
@@ -138,7 +141,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Review probability and cost of threats vs prevention costs"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_eval_threat_landscape.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_priorities_eval_threat_landscape.html",
+        related_best_practices=["SEC01-BP07"]
     ),
     "OPS01-BP06": BestPractice(
         id="OPS01-BP06",
@@ -180,7 +184,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Create documentation for non-AWS resources identifying ownership"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_resource_owners.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_resource_owners.html",
+        related_best_practices=["OPS02-BP02", "OPS02-BP04"]
     ),
     "OPS02-BP02": BestPractice(
         id="OPS02-BP02",
@@ -201,7 +206,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Convert processes to code using Lambda functions or CloudFormation templates"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_proc_owners.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_proc_owners.html",
+        related_best_practices=["OPS02-BP01", "OPS02-BP04", "OPS11-BP04"]
     ),
     "OPS02-BP03": BestPractice(
         id="OPS02-BP03",
@@ -222,7 +228,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Automate activities using Lambda functions and Systems Manager documents"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_activity_owners.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_activity_owners.html",
+        related_best_practices=["OPS02-BP01", "OPS02-BP02", "OPS02-BP04", "OPS02-BP05", "OPS11-BP04"]
     ),
     "OPS02-BP04": BestPractice(
         id="OPS02-BP04",
@@ -243,7 +250,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Establish periodic review processes and feedback mechanisms"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_responsibilities_ownership.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_def_responsibilities_ownership.html",
+        related_best_practices=["OPS02-BP01", "OPS02-BP02", "OPS02-BP03", "OPS02-BP05"]
     ),
     "OPS02-BP05": BestPractice(
         id="OPS02-BP05",
@@ -264,7 +272,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Create lightweight and accessible change request mechanisms"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_req_add_chg_exception.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_ops_model_req_add_chg_exception.html",
+        related_best_practices=["OPS02-BP01", "OPS02-BP02", "OPS02-BP03"]
     ),
     "OPS02-BP06": BestPractice(
         id="OPS02-BP06",
@@ -961,7 +970,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Integrate improvement activities into operational workflows"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_process_cont_imp.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_process_cont_imp.html",
+        related_best_practices=["OPS11-BP02", "OPS11-BP03", "OPS11-BP07"]
     ),
     "OPS11-BP02": BestPractice(
         id="OPS11-BP02",
@@ -982,7 +992,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Share RCA learnings across teams and organization"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_perform_rca_process.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_perform_rca_process.html",
+        related_best_practices=["OPS11-BP01", "OPS11-BP03", "OPS11-BP08"]
     ),
     "OPS11-BP03": BestPractice(
         id="OPS11-BP03",
@@ -1003,7 +1014,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Integrate feedback collection into standard operational procedures"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_feedback_loops.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_feedback_loops.html",
+        related_best_practices=["OPS01-BP01", "OPS01-BP02", "OPS11-BP01", "OPS11-BP02"]
     ),
     "OPS11-BP04": BestPractice(
         id="OPS11-BP04",
@@ -1024,7 +1036,8 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
             "Create knowledge transfer processes for role transitions"
         ],
         requires_user_input=True,
-        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_knowledge_management.html"
+        url="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/ops_evolve_ops_knowledge_management.html",
+        related_best_practices=["OPS02-BP02", "OPS02-BP03", "OPS11-BP08"]
     ),
     "OPS11-BP05": BestPractice(
         id="OPS11-BP05",
