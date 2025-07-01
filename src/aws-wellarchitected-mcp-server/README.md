@@ -295,7 +295,21 @@ The server evaluates 12+ core best practices across all pillars:
 - **SEC01-BP06**: Automate Testing and Validation of Security Controls
 - **SEC01-BP07**: Identify Threats and Prioritize Mitigations *(requires user input)*
 - **SEC01-BP08**: Evaluate and Implement New Security Services *(requires user input)*
-
+- **SEC04-BP01**: Perform Vulnerability Management
+- **SEC04-BP02**: Use Hardened Images
+- **SEC04-BP03**: Reduce Manual Management and Interactive Access
+- **SEC04-BP04**: Validate Software Integrity
+- **SEC04-BP05**: Automate Compute Protection
+- **SEC05-BP01**: Create Network Layers
+- **SEC05-BP02**: Control Traffic at All Layers
+- **SEC05-BP03**: Implement Inspection and Protection
+- **SEC05-BP04**: Automate Network Protection
+- **SEC06-BP01**: Perform Application Security Testing
+- **SEC06-BP02**: Configure Service and Application Logging
+- **SEC06-BP03**: Analyze Logs Centrally
+- **SEC06-BP04**: Implement Actionable Security Events
+- **SEC01**: Strong Identity Foundation
+- **SEC02**: Security at All Layers
 
 ### 🛡️ Reliability
 - **REL01**: Design for Failure

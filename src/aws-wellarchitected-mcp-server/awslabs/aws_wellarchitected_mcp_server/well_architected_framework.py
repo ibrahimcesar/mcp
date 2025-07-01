@@ -1626,6 +1626,279 @@ WELL_ARCHITECTED_BEST_PRACTICES: Dict[str, BestPractice] = {
         url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_securely_operate_implement_services_features.html",
         related_best_practices=["SEC01-BP04"]
     ),
+    "SEC06-BP01": BestPractice(
+        id="SEC06-BP01",
+        title="Perform Application Security Testing",
+        pillar=Pillar.SECURITY,
+        description="Perform application security testing as part of the software development lifecycle",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you perform static application security testing (SAST)?",
+            "Do you perform dynamic application security testing (DAST)?",
+            "Are security tests integrated into your CI/CD pipeline?",
+            "Do you perform dependency scanning for vulnerabilities?"
+        ],
+        implementation_guidance=[
+            "Use Amazon CodeGuru Reviewer for static code analysis",
+            "Implement DAST tools in your testing pipeline",
+            "Use AWS Inspector for container and application vulnerability assessment",
+            "Scan dependencies for known vulnerabilities in CI/CD"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_detect_investigate_events_app_service_logging.html",
+        related_best_practices=["SEC06-BP02", "SEC06-BP03"]
+    ),
+    "SEC06-BP02": BestPractice(
+        id="SEC06-BP02",
+        title="Configure Service and Application Logging",
+        pillar=Pillar.SECURITY,
+        description="Configure logging for services and applications to support security monitoring",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Are you logging security-relevant events from applications and services?",
+            "Do logs include sufficient detail for security analysis?",
+            "Are logs centrally collected and stored securely?",
+            "Do you have log retention policies aligned with security requirements?"
+        ],
+        implementation_guidance=[
+            "Use AWS CloudTrail for API logging",
+            "Configure VPC Flow Logs for network monitoring",
+            "Use AWS CloudWatch Logs for application logging",
+            "Implement structured logging with security context"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_detect_investigate_events_logs.html",
+        related_best_practices=["SEC06-BP01", "SEC06-BP03"]
+    ),
+    "SEC06-BP03": BestPractice(
+        id="SEC06-BP03",
+        title="Analyze Logs Centrally",
+        pillar=Pillar.SECURITY,
+        description="Analyze security logs centrally to identify potential security events",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you centrally analyze logs for security events?",
+            "Are you using automated tools for log analysis?",
+            "Do you have correlation rules to identify security patterns?",
+            "Are security events prioritized and escalated appropriately?"
+        ],
+        implementation_guidance=[
+            "Use Amazon Security Lake for centralized security data",
+            "Implement Amazon GuardDuty for threat detection",
+            "Use AWS Security Hub for centralized security findings",
+            "Create custom correlation rules for your environment"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_detect_investigate_events_security_alerts.html",
+        related_best_practices=["SEC06-BP01", "SEC06-BP02", "SEC06-BP04"]
+    ),
+    "SEC06-BP04": BestPractice(
+        id="SEC06-BP04",
+        title="Implement Actionable Security Events",
+        pillar=Pillar.SECURITY,
+        description="Implement security events that trigger appropriate response actions",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do security events trigger automated responses where appropriate?",
+            "Are security alerts actionable with clear next steps?",
+            "Do you have escalation procedures for different event severities?",
+            "Are security events integrated with incident response processes?"
+        ],
+        implementation_guidance=[
+            "Use AWS Config Rules for compliance monitoring",
+            "Implement automated remediation with AWS Systems Manager",
+            "Create security event playbooks and runbooks",
+            "Integrate with incident management systems"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_detect_investigate_events_noncompliant_resources.html",
+        related_best_practices=["SEC06-BP03"]
+    ),
+    "SEC05-BP01": BestPractice(
+        id="SEC05-BP01",
+        title="Create Network Layers",
+        pillar=Pillar.SECURITY,
+        description="Create network layers to segment resources based on security requirements",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you use multiple network layers to segment resources?",
+            "Are public and private resources properly separated?",
+            "Do you use subnets to create security boundaries?",
+            "Are network access controls implemented at multiple layers?"
+        ],
+        implementation_guidance=[
+            "Use VPCs to create isolated network environments",
+            "Implement public and private subnets appropriately",
+            "Use security groups and NACLs for access control",
+            "Consider AWS Transit Gateway for complex network topologies"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_network_protection_create_layers.html",
+        related_best_practices=["SEC05-BP02"]
+    ),
+    "SEC05-BP02": BestPractice(
+        id="SEC05-BP02",
+        title="Control Traffic at All Layers",
+        pillar=Pillar.SECURITY,
+        description="Control network traffic at all layers with appropriate security controls",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you control traffic at the network, subnet, and instance levels?",
+            "Are security groups configured with least privilege access?",
+            "Do you use NACLs for additional network-level controls?",
+            "Are you monitoring and logging network traffic?"
+        ],
+        implementation_guidance=[
+            "Configure security groups with minimal required access",
+            "Use NACLs for subnet-level traffic control",
+            "Implement VPC Flow Logs for traffic monitoring",
+            "Use AWS WAF for application-layer protection"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_network_protection_layered.html",
+        related_best_practices=["SEC05-BP01", "SEC05-BP03"]
+    ),
+    "SEC05-BP03": BestPractice(
+        id="SEC05-BP03",
+        title="Implement Inspection and Protection",
+        pillar=Pillar.SECURITY,
+        description="Implement network inspection and protection mechanisms",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you inspect network traffic for malicious activity?",
+            "Are you using intrusion detection and prevention systems?",
+            "Do you have DDoS protection implemented?",
+            "Are you monitoring for unusual network patterns?"
+        ],
+        implementation_guidance=[
+            "Use AWS Shield for DDoS protection",
+            "Implement AWS WAF for web application protection",
+            "Use Amazon GuardDuty for network threat detection",
+            "Consider AWS Network Firewall for advanced inspection"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_network_protection_inspection.html",
+        related_best_practices=["SEC05-BP02", "SEC05-BP04"]
+    ),
+    "SEC05-BP04": BestPractice(
+        id="SEC05-BP04",
+        title="Automate Network Protection",
+        pillar=Pillar.SECURITY,
+        description="Automate network protection to respond to threats quickly",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have automated responses to network security events?",
+            "Are network security controls managed as code?",
+            "Do you automatically update security rules based on threat intelligence?",
+            "Are network security configurations validated automatically?"
+        ],
+        implementation_guidance=[
+            "Use AWS Config Rules to validate network configurations",
+            "Implement automated security group management",
+            "Use AWS Lambda for automated threat response",
+            "Integrate threat intelligence feeds for automatic rule updates"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_network_auto_protect.html",
+        related_best_practices=["SEC05-BP03"]
+    ),
+    "SEC04-BP01": BestPractice(
+        id="SEC04-BP01",
+        title="Perform Vulnerability Management",
+        pillar=Pillar.SECURITY,
+        description="Perform regular vulnerability management for compute resources",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you regularly scan for vulnerabilities in your compute resources?",
+            "Are vulnerabilities prioritized and remediated based on risk?",
+            "Do you have a vulnerability management process?",
+            "Are you tracking vulnerability remediation metrics?"
+        ],
+        implementation_guidance=[
+            "Use Amazon Inspector for vulnerability assessment",
+            "Implement regular vulnerability scanning schedules",
+            "Prioritize vulnerabilities based on CVSS scores and business impact",
+            "Track remediation metrics and SLAs"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_vulnerability_management.html",
+        related_best_practices=["SEC04-BP02", "SEC04-BP05"]
+    ),
+    "SEC04-BP02": BestPractice(
+        id="SEC04-BP02",
+        title="Use Hardened Images",
+        pillar=Pillar.SECURITY,
+        description="Use hardened images and reduce attack surface of compute resources",
+        risk_level=RiskLevel.HIGH,
+        questions=[
+            "Do you use hardened base images for your compute resources?",
+            "Are unnecessary services and packages removed from images?",
+            "Do you regularly update and patch your base images?",
+            "Are images scanned for vulnerabilities before deployment?"
+        ],
+        implementation_guidance=[
+            "Use minimal base images like Amazon Linux or Alpine",
+            "Remove unnecessary packages and services from images",
+            "Implement image scanning in your CI/CD pipeline",
+            "Use AWS ECR image scanning for container images"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_hardened_images.html",
+        related_best_practices=["SEC04-BP01", "SEC04-BP04"]
+    ),
+    "SEC04-BP03": BestPractice(
+        id="SEC04-BP03",
+        title="Reduce Manual Management and Interactive Access",
+        pillar=Pillar.SECURITY,
+        description="Reduce manual management and interactive access to compute resources",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you minimize interactive access to compute resources?",
+            "Are administrative tasks automated where possible?",
+            "Do you use session management for necessary interactive access?",
+            "Are privileged operations logged and monitored?"
+        ],
+        implementation_guidance=[
+            "Use AWS Systems Manager Session Manager for secure access",
+            "Automate administrative tasks with Systems Manager Automation",
+            "Implement just-in-time access for privileged operations",
+            "Log and monitor all privileged access activities"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_reduce_manual_management.html",
+        related_best_practices=["SEC04-BP05"]
+    ),
+    "SEC04-BP04": BestPractice(
+        id="SEC04-BP04",
+        title="Validate Software Integrity",
+        pillar=Pillar.SECURITY,
+        description="Validate the integrity of software and configurations",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you validate the integrity of software before deployment?",
+            "Are software packages signed and verified?",
+            "Do you use checksums or hashes to verify file integrity?",
+            "Are configuration changes validated for integrity?"
+        ],
+        implementation_guidance=[
+            "Use package signing and verification mechanisms",
+            "Implement file integrity monitoring",
+            "Use AWS Systems Manager for configuration compliance",
+            "Verify checksums and digital signatures for software packages"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_validate_software_integrity.html",
+        related_best_practices=["SEC04-BP02"]
+    ),
+    "SEC04-BP05": BestPractice(
+        id="SEC04-BP05",
+        title="Automate Compute Protection",
+        pillar=Pillar.SECURITY,
+        description="Automate compute protection to respond to security events",
+        risk_level=RiskLevel.MEDIUM,
+        questions=[
+            "Do you have automated responses to compute security events?",
+            "Are security configurations managed and enforced automatically?",
+            "Do you automatically isolate compromised resources?",
+            "Are security patches applied automatically where appropriate?"
+        ],
+        implementation_guidance=[
+            "Use AWS Systems Manager Patch Manager for automated patching",
+            "Implement automated incident response with AWS Lambda",
+            "Use AWS Config for automated compliance enforcement",
+            "Automate resource isolation during security incidents"
+        ],
+        url="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/sec_protect_compute_auto_protection.html",
+        related_best_practices=["SEC04-BP01", "SEC04-BP03"]
+    ),
 
     
     # Reliability
