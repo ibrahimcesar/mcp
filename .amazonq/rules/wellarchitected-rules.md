@@ -32,3 +32,5 @@ This project implements an MCP server for AWS Well-Architected Framework reviews
 - Validate JSON schema compliance
 - Ensure proper error handling for invalid inputs
 - Test with various pillar combinations
+
+Never say WAR well architected review, always use WAFR well-architected framework review

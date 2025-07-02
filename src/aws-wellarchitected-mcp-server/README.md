@@ -190,6 +190,33 @@ Generate SMART solutions with implementation guidance
 - **selected_pillars**: Optional list of pillars to analyze
 - **focus_on_quick_wins**: Whether to focus on quick wins only
 
+### 🔗 `list_wa_workloads`
+List all AWS Well-Architected Tool workloads
+- **aws_profile**: Optional AWS profile name
+- **region**: AWS region (default: us-east-1)
+
+### 🏗️ `get_wa_workload`
+Get detailed information about a specific Well-Architected workload
+- **workload_id**: Well-Architected workload ID
+- **aws_profile**: Optional AWS profile name
+- **region**: AWS region (default: us-east-1)
+
+### 📤 `export_wa_workload`
+Export Well-Architected workload data for MCP analysis
+- **workload_id**: Well-Architected workload ID to export
+- **aws_profile**: Optional AWS profile name
+- **region**: AWS region (default: us-east-1)
+
+### ➕ `create_wa_workload`
+Create a new Well-Architected workload in AWS
+- **workload_name**: Name for the new workload
+- **description**: Description of the workload
+- **environment**: Environment type (PRODUCTION, PREPRODUCTION, etc.)
+- **aws_regions**: List of AWS regions where workload operates
+- **review_owner**: Email of the review owner
+- **aws_profile**: Optional AWS profile name
+- **region**: AWS region (default: us-east-1)
+
 </details>
 
 ## 📊 Output

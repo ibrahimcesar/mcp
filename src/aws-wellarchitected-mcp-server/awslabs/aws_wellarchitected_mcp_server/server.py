@@ -849,6 +849,269 @@ async def get_smart_solutions(
 
 
 @mcp.tool()
+async def list_wa_workloads(
+    aws_profile: Optional[str] = Field(
+        description="AWS profile name to use for authentication",
+        default=None
+    ),
+    region: str = Field(
+        description="AWS region for Well-Architected Tool",
+        default="us-east-1"
+    )
+) -> Dict:
+    """List all AWS Well-Architected Tool workloads.
+    
+    Args:
+        aws_profile: Optional AWS profile name
+        region: AWS region to use
+        
+    Returns:
+        List of Well-Architected workloads with risk summaries
+    """
+    from awslabs.aws_wellarchitected_mcp_server.wa_tool_integration import WAToolIntegration, format_wa_tool_response
+    
+    try:
+        logger.info(f"Listing Well-Architected workloads in region {region}")
+        
+        wa_integration = WAToolIntegration(aws_profile, region)
+        workloads_data = wa_integration.list_workloads()
+        
+        if 'error' in workloads_data:
+            return {
+                "status": "error",
+                "message": f"Failed to list workloads: {workloads_data['error']}",
+                "suggestion": "Ensure AWS credentials are configured and you have Well-Architected Tool permissions"
+            }
+        
+        formatted_output = format_wa_tool_response(workloads_data, "workload_list")
+        
+        return {
+            "status": "success",
+            "workloads": workloads_data['workloads'],
+            "total_count": workloads_data['total_count'],
+            "formatted_output": formatted_output,
+            "region": region
+        }
+        
+    except Exception as e:
+        logger.error(f"Error listing Well-Architected workloads: {e}")
+        return {
+            "status": "error",
+            "message": f"Failed to connect to AWS Well-Architected Tool: {str(e)}",
+            "suggestion": "Check AWS credentials and permissions"
+        }
+
+
+@mcp.tool()
+async def get_wa_workload(
+    workload_id: str = Field(description="Well-Architected workload ID"),
+    aws_profile: Optional[str] = Field(
+        description="AWS profile name to use for authentication",
+        default=None
+    ),
+    region: str = Field(
+        description="AWS region for Well-Architected Tool",
+        default="us-east-1"
+    )
+) -> Dict:
+    """Get detailed information about a specific Well-Architected workload.
+    
+    Args:
+        workload_id: The workload ID from AWS Well-Architected Tool
+        aws_profile: Optional AWS profile name
+        region: AWS region to use
+        
+    Returns:
+        Detailed workload information including risk assessment
+    """
+    from awslabs.aws_wellarchitected_mcp_server.wa_tool_integration import WAToolIntegration, format_wa_tool_response
+    
+    try:
+        logger.info(f"Getting Well-Architected workload details: {workload_id}")
+        
+        wa_integration = WAToolIntegration(aws_profile, region)
+        workload_data = wa_integration.get_workload_details(workload_id)
+        
+        if 'error' in workload_data:
+            return {
+                "status": "error",
+                "message": f"Failed to get workload: {workload_data['error']}",
+                "workload_id": workload_id
+            }
+        
+        # Get answers summary
+        answers_data = wa_integration.get_workload_answers(workload_id)
+        
+        formatted_output = format_wa_tool_response(workload_data, "workload_details")
+        
+        return {
+            "status": "success",
+            "workload": workload_data,
+            "answers_summary": answers_data if 'error' not in answers_data else None,
+            "formatted_output": formatted_output,
+            "region": region
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting Well-Architected workload: {e}")
+        return {
+            "status": "error",
+            "message": f"Failed to get workload details: {str(e)}",
+            "workload_id": workload_id
+        }
+
+
+@mcp.tool()
+async def export_wa_workload(
+    workload_id: str = Field(description="Well-Architected workload ID to export"),
+    aws_profile: Optional[str] = Field(
+        description="AWS profile name to use for authentication",
+        default=None
+    ),
+    region: str = Field(
+        description="AWS region for Well-Architected Tool",
+        default="us-east-1"
+    )
+) -> Dict:
+    """Export Well-Architected workload data for MCP analysis.
+    
+    Args:
+        workload_id: The workload ID to export
+        aws_profile: Optional AWS profile name
+        region: AWS region to use
+        
+    Returns:
+        Comprehensive workload data formatted for MCP analysis
+    """
+    from awslabs.aws_wellarchitected_mcp_server.wa_tool_integration import WAToolIntegration
+    
+    try:
+        logger.info(f"Exporting Well-Architected workload: {workload_id}")
+        
+        wa_integration = WAToolIntegration(aws_profile, region)
+        export_data = wa_integration.export_workload_data(workload_id)
+        
+        if 'error' in export_data:
+            return {
+                "status": "error",
+                "message": f"Failed to export workload: {export_data['error']}",
+                "workload_id": workload_id
+            }
+        
+        # Generate MCP-compatible analysis summary
+        workload_info = export_data['workload_info']
+        risk_summary = export_data['assessment_data']['risk_summary']
+        
+        analysis_summary = f"""
+# 📊 Well-Architected Export Summary
+
+**Workload**: {workload_info['workload_name']}
+**Environment**: {workload_info.get('environment', 'Not specified')}
+**Total Questions**: {export_data['assessment_data']['total_questions']}
+
+## 🎯 Risk Assessment
+- 🔴 **High Risk**: {risk_summary.get('HIGH', 0)} items requiring immediate attention
+- 🟡 **Medium Risk**: {risk_summary.get('MEDIUM', 0)} items for planned improvement
+- 🟢 **Low Risk**: {risk_summary.get('LOW', 0)} items in good state
+- ⚪ **Not Reviewed**: {risk_summary.get('UNANSWERED', 0)} items pending review
+
+## 🔄 Next Steps
+1. Use `get_priority_analysis` to identify top improvement opportunities
+2. Use `get_smart_solutions` to get implementation guidance
+3. Use `create_review_plan` to structure your improvement approach
+"""
+        
+        return {
+            "status": "success",
+            "workload_id": workload_id,
+            "export_data": export_data,
+            "analysis_summary": analysis_summary,
+            "mcp_recommendations": [
+                "Run priority analysis on exported data",
+                "Generate SMART solutions for high-risk items",
+                "Create implementation roadmap",
+                "Track progress with regular re-exports"
+            ]
+        }
+        
+    except Exception as e:
+        logger.error(f"Error exporting Well-Architected workload: {e}")
+        return {
+            "status": "error",
+            "message": f"Failed to export workload: {str(e)}",
+            "workload_id": workload_id
+        }
+
+
+@mcp.tool()
+async def create_wa_workload(
+    workload_name: str = Field(description="Name for the new workload"),
+    description: str = Field(description="Description of the workload"),
+    environment: str = Field(description="Environment (PRODUCTION, PREPRODUCTION, etc.)"),
+    aws_regions: List[str] = Field(description="List of AWS regions where workload operates"),
+    review_owner: str = Field(description="Email of the review owner"),
+    aws_profile: Optional[str] = Field(
+        description="AWS profile name to use for authentication",
+        default=None
+    ),
+    region: str = Field(
+        description="AWS region for Well-Architected Tool",
+        default="us-east-1"
+    )
+) -> Dict:
+    """Create a new Well-Architected workload in AWS.
+    
+    Args:
+        workload_name: Name for the new workload
+        description: Description of the workload
+        environment: Environment type
+        aws_regions: List of AWS regions
+        review_owner: Email of the review owner
+        aws_profile: Optional AWS profile name
+        region: AWS region to use
+        
+    Returns:
+        Created workload information
+    """
+    from awslabs.aws_wellarchitected_mcp_server.wa_tool_integration import WAToolIntegration
+    
+    try:
+        logger.info(f"Creating Well-Architected workload: {workload_name}")
+        
+        wa_integration = WAToolIntegration(aws_profile, region)
+        result = wa_integration.create_workload(
+            workload_name, description, environment, aws_regions, review_owner
+        )
+        
+        if 'error' in result:
+            return {
+                "status": "error",
+                "message": f"Failed to create workload: {result['error']}",
+                "workload_name": workload_name
+            }
+        
+        return {
+            "status": "success",
+            "workload_id": result['workload_id'],
+            "workload_arn": result['workload_arn'],
+            "message": result['message'],
+            "next_steps": [
+                f"Use `get_wa_workload` with ID {result['workload_id']} to view details",
+                "Begin answering Well-Architected questions in the AWS console",
+                "Use `export_wa_workload` to analyze with MCP tools"
+            ]
+        }
+        
+    except Exception as e:
+        logger.error(f"Error creating Well-Architected workload: {e}")
+        return {
+            "status": "error",
+            "message": f"Failed to create workload: {str(e)}",
+            "workload_name": workload_name
+        }
+
+
+@mcp.tool()
 async def ask_implementation_fix(
     best_practice_id: str = Field(description="ID of the best practice to implement"),
     current_context: str = Field(description="Current implementation context"),
