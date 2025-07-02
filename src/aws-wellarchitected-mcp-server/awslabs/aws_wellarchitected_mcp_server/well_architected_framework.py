@@ -56,6 +56,10 @@ def get_best_practices_by_pillar(pillar: Pillar) -> List[BestPractice]:
     return [bp for bp in WELL_ARCHITECTED_BEST_PRACTICES.values() if bp.pillar == pillar]
 
 
-def get_all_best_practices() -> List[BestPractice]:
+def get_all_best_practices() -> Dict[str, BestPractice]:
     """Get all Well-Architected best practices."""
+    return WELL_ARCHITECTED_BEST_PRACTICES
+
+def get_all_best_practices_list() -> List[BestPractice]:
+    """Get all Well-Architected best practices as a list."""
     return list(WELL_ARCHITECTED_BEST_PRACTICES.values())

@@ -1,0 +1,1 @@
+- Always use uv for installation, run and test of Python

@@ -18,6 +18,7 @@ import argparse
 from awslabs.aws_wellarchitected_mcp_server.adr_generator import ADRGenerator
 from awslabs.aws_wellarchitected_mcp_server.models import Pillar, ReviewScope
 from awslabs.aws_wellarchitected_mcp_server.reviewer import WellArchitectedReviewer
+from awslabs.aws_wellarchitected_mcp_server.display_utils import format_risk_level, format_pillar, format_pillar_simple
 from loguru import logger
 from mcp.server.fastmcp import FastMCP
 from pydantic import Field
@@ -141,8 +142,10 @@ async def review(
                 "best_practice_id": assessment.best_practice_id,
                 "title": assessment.title,
                 "pillar": assessment.pillar.value,
+                "pillar_display": format_pillar_simple(assessment.pillar),
                 "status": assessment.status.value,
                 "risk_level": assessment.risk_level.value,
+                "risk_level_display": format_risk_level(assessment.risk_level),
                 "current_implementation": assessment.current_implementation,
                 "gaps_identified": assessment.gaps_identified,
                 "recommendations": assessment.recommendations,
@@ -228,7 +231,7 @@ async def get_best_practices(
         Dictionary containing best practices information
     """
     from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import (
-        get_all_best_practices,
+        get_all_best_practices_list,
         get_best_practices_by_pillar
     )
     
@@ -238,7 +241,7 @@ async def get_best_practices(
             best_practices = get_best_practices_by_pillar(pillar_enum)
             title = f"Best Practices for {pillar_enum.value}"
         else:
-            best_practices = get_all_best_practices()
+            best_practices = get_all_best_practices_list()
             title = "All Well-Architected Best Practices"
         
         practices_data = []
@@ -519,6 +522,329 @@ async def evaluate_customer_needs(
         
     except Exception as e:
         logger.error(f"Error evaluating customer needs: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool()
+async def create_review_plan(
+    workload_name: str = Field(description="Name of the workload to review"),
+    selected_pillars: Optional[List[str]] = Field(
+        description="Pillars to include in review (OPERATIONAL_EXCELLENCE, SECURITY, RELIABILITY, PERFORMANCE_EFFICIENCY, COST_OPTIMIZATION, SUSTAINABILITY)",
+        default=None
+    )
+) -> Dict:
+    """Create a comprehensive Well-Architected review plan with three phases: Learn, Measure, Improve.
+    
+    Args:
+        workload_name: Name of the workload being reviewed
+        selected_pillars: Optional list of pillars to focus on
+        
+    Returns:
+        Structured review plan with phases and steps
+    """
+    from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import get_all_best_practices
+    from awslabs.aws_wellarchitected_mcp_server.review import WellArchitectedReview
+    from awslabs.aws_wellarchitected_mcp_server.review_guide import get_review_introduction, format_pillar_options
+    
+    try:
+        # Parse pillars
+        pillars = []
+        if selected_pillars:
+            for pillar_str in selected_pillars:
+                try:
+                    pillar = Pillar(pillar_str.upper())
+                    pillars.append(pillar)
+                except ValueError:
+                    logger.warning(f"Invalid pillar: {pillar_str}")
+        else:
+            pillars = list(Pillar)
+        
+        # Create review
+        best_practices = get_all_best_practices()
+        review = WellArchitectedReview(best_practices)
+        plan = review.create_review_plan(workload_name, pillars)
+        
+        # Format response
+        response = {
+            "introduction": get_review_introduction(),
+            "review_plan": {
+                "workload_name": plan.workload_name,
+                "estimated_duration": plan.estimated_duration,
+                "prerequisites": plan.prerequisites,
+                "phases": {}
+            }
+        }
+        
+        # Add phase details
+        for phase, steps in plan.phases.items():
+            response["review_plan"]["phases"][phase.value] = {
+                "name": phase.value.title(),
+                "step_count": len(steps),
+                "steps": [
+                    {
+                        "id": step.id,
+                        "title": step.title,
+                        "description": step.description,
+                        "pillar": step.pillar.value,
+                        "questions": step.questions,
+                        "validation_criteria": step.validation_criteria,
+                        "estimated_effort": step.estimated_effort,
+                        "dependencies": step.dependencies or []
+                    }
+                    for step in steps
+                ]
+            }
+        
+        return response
+        
+    except Exception as e:
+        logger.error(f"Error creating review plan: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool()
+async def get_priority_analysis(
+    selected_pillars: Optional[List[str]] = Field(
+        description="Pillars to analyze (OPERATIONAL_EXCELLENCE, SECURITY, RELIABILITY, PERFORMANCE_EFFICIENCY, COST_OPTIMIZATION, SUSTAINABILITY)",
+        default=None
+    ),
+    count: int = Field(description="Number of top priorities to return (3, 5, or 10)", default=5)
+) -> Dict:
+    """Get top priority best practices based on risk and relationships.
+    
+    Args:
+        selected_pillars: Optional list of pillars to focus on
+        count: Number of top priorities to return
+        
+    Returns:
+        Prioritized list of best practices with implementation guidance
+    """
+    from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import get_all_best_practices
+    from awslabs.aws_wellarchitected_mcp_server.priority_analyzer import PriorityAnalyzer, format_priority_recommendations, get_implementation_roadmap
+    
+    try:
+        # Parse pillars
+        pillars = []
+        if selected_pillars:
+            for pillar_str in selected_pillars:
+                try:
+                    pillar = Pillar(pillar_str.upper())
+                    pillars.append(pillar)
+                except ValueError:
+                    logger.warning(f"Invalid pillar: {pillar_str}")
+        else:
+            pillars = list(Pillar)
+        
+        # Get priorities
+        best_practices = get_all_best_practices()
+        analyzer = PriorityAnalyzer(best_practices)
+        priorities = analyzer.get_top_priorities(pillars, count)
+        
+        # Format response
+        priority_items = []
+        for item in priorities:
+            bp = item.best_practice
+            priority_items.append({
+                "rank": item.implementation_order,
+                "best_practice": {
+                    "id": bp.id,
+                    "title": bp.title,
+                    "pillar": bp.pillar.value,
+                    "risk_level": bp.risk_level.value,
+                    "description": bp.description
+                },
+                "priority_score": item.priority_score,
+                "impact_reason": item.impact_reason,
+                "related_practices": [
+                    {"id": rp.id, "title": rp.title}
+                    for rp in item.related_practices
+                ],
+                "implementation_guidance": bp.implementation_guidance
+            })
+        
+        return {
+            "summary": {
+                "total_priorities": len(priorities),
+                "pillars_analyzed": [p.value for p in pillars],
+                "analysis_focus": "High impact, manageable complexity items for first iteration"
+            },
+            "priorities": priority_items,
+            "implementation_roadmap": get_implementation_roadmap(priorities),
+            "formatted_report": format_priority_recommendations(priorities)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting priority analysis: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool()
+async def get_eisenhower_matrix(
+    selected_pillars: Optional[List[str]] = Field(
+        description="Pillars to analyze (OPERATIONAL_EXCELLENCE, SECURITY, RELIABILITY, PERFORMANCE_EFFICIENCY, COST_OPTIMIZATION, SUSTAINABILITY)",
+        default=None
+    )
+) -> Dict:
+    """Create Eisenhower Matrix for Well-Architected best practices prioritization.
+    
+    Args:
+        selected_pillars: Optional list of pillars to focus on
+        
+    Returns:
+        Eisenhower Matrix with practices categorized by urgency and importance
+    """
+    from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import get_all_best_practices
+    from awslabs.aws_wellarchitected_mcp_server.eisenhower_matrix import EisenhowerMatrix, format_eisenhower_matrix, get_matrix_summary
+    
+    try:
+        # Parse pillars
+        pillars = []
+        if selected_pillars:
+            for pillar_str in selected_pillars:
+                try:
+                    pillar = Pillar(pillar_str.upper())
+                    pillars.append(pillar)
+                except ValueError:
+                    logger.warning(f"Invalid pillar: {pillar_str}")
+        else:
+            pillars = list(Pillar)
+        
+        # Create matrix
+        best_practices = get_all_best_practices()
+        matrix = EisenhowerMatrix(best_practices)
+        eisenhower_matrix = matrix.create_matrix(pillars)
+        
+        # Format response
+        matrix_data = {}
+        for quadrant, items in eisenhower_matrix.items():
+            matrix_data[quadrant.value] = {
+                "name": quadrant.value.replace('_', ' ').title(),
+                "count": len(items),
+                "items": [
+                    {
+                        "best_practice": {
+                            "id": item.best_practice.id,
+                            "title": item.best_practice.title,
+                            "pillar": item.best_practice.pillar.value,
+                            "risk_level": item.best_practice.risk_level.value
+                        },
+                        "urgency_score": item.urgency_score,
+                        "importance_score": item.importance_score,
+                        "action_recommendation": item.action_recommendation
+                    }
+                    for item in items[:10]  # Limit to top 10 per quadrant
+                ]
+            }
+        
+        return {
+            "matrix": matrix_data,
+            "visual_matrix": format_eisenhower_matrix(eisenhower_matrix),
+            "summary": get_matrix_summary(eisenhower_matrix),
+            "pillars_analyzed": [p.value for p in pillars]
+        }
+        
+    except Exception as e:
+        logger.error(f"Error creating Eisenhower matrix: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool()
+async def get_smart_solutions(
+    selected_pillars: Optional[List[str]] = Field(
+        description="Pillars to analyze (OPERATIONAL_EXCELLENCE, SECURITY, RELIABILITY, PERFORMANCE_EFFICIENCY, COST_OPTIMIZATION, SUSTAINABILITY)",
+        default=None
+    ),
+    focus_on_quick_wins: bool = Field(description="Focus only on quick wins (high impact, low complexity)", default=True)
+) -> Dict:
+    """Generate SMART solutions for Well-Architected improvements.
+    
+    Args:
+        selected_pillars: Optional list of pillars to focus on
+        focus_on_quick_wins: Whether to focus on quick wins only
+        
+    Returns:
+        SMART solutions with implementation guidance
+    """
+    from awslabs.aws_wellarchitected_mcp_server.well_architected_framework import get_all_best_practices
+    from awslabs.aws_wellarchitected_mcp_server.priority_analyzer import PriorityAnalyzer
+    from awslabs.aws_wellarchitected_mcp_server.solution_framework import SolutionFramework, format_smart_solutions, get_quick_wins
+    from awslabs.aws_wellarchitected_mcp_server.solution_guidelines import get_solution_guidelines, format_guidelines
+    
+    try:
+        # Parse pillars
+        pillars = []
+        if selected_pillars:
+            for pillar_str in selected_pillars:
+                try:
+                    pillar = Pillar(pillar_str.upper())
+                    pillars.append(pillar)
+                except ValueError:
+                    logger.warning(f"Invalid pillar: {pillar_str}")
+        else:
+            pillars = list(Pillar)
+        
+        # Get top priorities
+        best_practices = get_all_best_practices()
+        analyzer = PriorityAnalyzer(best_practices)
+        priorities = analyzer.get_top_priorities(pillars, 10)
+        
+        # Generate SMART solutions
+        solution_framework = SolutionFramework(best_practices)
+        guidelines = get_solution_guidelines()
+        
+        solutions = []
+        for priority_item in priorities:
+            bp = priority_item.best_practice
+            solution = solution_framework.generate_smart_solution(
+                bp, 
+                {'default_owner': 'Architecture Team'},
+                guidelines
+            )
+            solutions.append(solution)
+        
+        # Filter for quick wins if requested
+        if focus_on_quick_wins:
+            solutions = get_quick_wins(solutions)
+        
+        # Format response
+        solution_data = []
+        for solution in solutions:
+            solution_data.append({
+                "best_practice_id": solution.best_practice_id,
+                "smart_criteria": {
+                    "specific": solution.specific,
+                    "measurable": solution.measurable,
+                    "achievable": solution.achievable,
+                    "relevant": solution.relevant,
+                    "time_bound": solution.time_bound
+                },
+                "characteristics": {
+                    "owner": solution.owner,
+                    "complexity": solution.complexity.value,
+                    "business_impact": solution.business_impact.value,
+                    "is_two_way_door": solution.is_two_way_door,
+                    "pattern_reference": solution.pattern_reference
+                },
+                "implementation": {
+                    "prerequisites": solution.prerequisites,
+                    "success_criteria": solution.success_criteria,
+                    "rollback_plan": solution.rollback_plan
+                }
+            })
+        
+        return {
+            "guidelines": format_guidelines(),
+            "solutions": solution_data,
+            "formatted_guide": format_smart_solutions(solutions),
+            "summary": {
+                "total_solutions": len(solutions),
+                "focus": "Quick wins" if focus_on_quick_wins else "All priorities",
+                "pillars_analyzed": [p.value for p in pillars]
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"Error generating SMART solutions: {e}")
         return {"error": str(e)}
 
 

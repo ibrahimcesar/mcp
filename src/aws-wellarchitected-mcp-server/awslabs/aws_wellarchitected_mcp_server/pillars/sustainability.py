@@ -638,4 +638,3 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         related_best_practices=["SUS06-BP03", "SUS06-BP04"]
     )
 }
-}

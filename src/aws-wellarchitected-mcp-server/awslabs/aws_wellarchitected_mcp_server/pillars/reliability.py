@@ -1244,4 +1244,3 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         related_best_practices=["REL13-BP04"]
     )
 }
-}
