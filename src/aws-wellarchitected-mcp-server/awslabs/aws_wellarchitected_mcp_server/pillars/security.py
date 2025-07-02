@@ -24,6 +24,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP01",
         title="Separate Workloads Using Accounts",
         pillar=Pillar.SECURITY,
+        area="AWS account management and separation",
+
         description="Organize workloads in separate accounts and centralize identity management",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -45,6 +47,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP02",
         title="Secure Account Root User and Properties",
         pillar=Pillar.SECURITY,
+        area="AWS account management and separation",
+
         description="Secure the root user and configure account-level security properties",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -66,6 +70,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP03",
         title="Identify and Validate Control Objectives",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Identify and validate security control objectives based on compliance requirements",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -88,6 +94,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP04",
         title="Stay Up to Date with Security Threats and Recommendations",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Stay informed about current security threats and AWS security recommendations",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -110,6 +118,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP05",
         title="Reduce Security Management Scope",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Reduce security management scope by using managed services",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -131,6 +141,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP06",
         title="Automate Testing and Validation of Security Controls",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Automate testing and validation of security controls in pipelines",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -152,6 +164,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP07",
         title="Identify Threats and Prioritize Mitigations Using a Threat Model",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Perform threat modeling to identify and prioritize potential security threats",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -174,6 +188,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC01-BP08",
         title="Evaluate and Implement New Security Services and Features",
         pillar=Pillar.SECURITY,
+        area="Operating your workload securely",
+
         description="Regularly evaluate and implement new AWS security services and features",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -196,6 +212,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP01",
         title="Use Strong Identity Foundation",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Implement strong identity foundation with centralized identity provider",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -214,6 +232,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP02",
         title="Use Temporary Credentials",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Use temporary credentials instead of long-term access keys",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -232,6 +252,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP03",
         title="Store and Use Secrets Securely",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Store and use secrets securely using dedicated secret management services",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -250,6 +272,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP04",
         title="Rely on Centralized Identity Provider",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Rely on centralized identity provider for human and machine identities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -268,6 +292,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP05",
         title="Audit and Rotate Credentials Regularly",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Audit and rotate credentials regularly to maintain security",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -286,6 +312,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC02-BP06",
         title="Leverage User Groups and Attributes",
         pillar=Pillar.SECURITY,
+        area="Identity management",
+
         description="Leverage user groups and attributes for access control",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -304,6 +332,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP01",
         title="Define Access Requirements",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Define access requirements based on least privilege principle",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -322,6 +352,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP02",
         title="Grant Least Privilege Access",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Grant least privilege access to users and systems",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -340,6 +372,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP03",
         title="Establish Emergency Access Process",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Establish emergency access process for break-glass scenarios",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -358,6 +392,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP04",
         title="Reduce Permissions Continuously",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Continuously reduce permissions based on usage patterns",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -376,6 +412,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP05",
         title="Define Permission Guardrails for Your Organization",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Define permission guardrails to prevent privilege escalation",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -394,6 +432,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP06",
         title="Manage Access Based on Life Cycle",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Manage access based on user and resource life cycles",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -412,6 +452,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP07",
         title="Analyze Public and Cross-Account Access",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Analyze and monitor public and cross-account access",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -430,6 +472,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP08",
         title="Share Resources Securely Within Your Organization",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Share resources securely within your organization",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -448,6 +492,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC03-BP09",
         title="Share Resources Securely with a Third Party",
         pillar=Pillar.SECURITY,
+        area="Permissions management",
+
         description="Share resources securely with third parties when needed",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -466,6 +512,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC06-BP01",
         title="Perform Application Security Testing",
         pillar=Pillar.SECURITY,
+        area="Detection",
+
         description="Perform application security testing as part of the software development lifecycle",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -487,6 +535,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC06-BP02",
         title="Configure Service and Application Logging",
         pillar=Pillar.SECURITY,
+        area="Detection",
+
         description="Configure logging for services and applications to support security monitoring",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -508,6 +558,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC06-BP03",
         title="Analyze Logs Centrally",
         pillar=Pillar.SECURITY,
+        area="Detection",
+
         description="Analyze security logs centrally to identify potential security events",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -529,6 +581,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC06-BP04",
         title="Implement Actionable Security Events",
         pillar=Pillar.SECURITY,
+        area="Detection",
+
         description="Implement security events that trigger appropriate response actions",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -550,6 +604,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC05-BP01",
         title="Create Network Layers",
         pillar=Pillar.SECURITY,
+        area="Protecting networks",
+
         description="Create network layers to segment resources based on security requirements",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -571,6 +627,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC05-BP02",
         title="Control Traffic at All Layers",
         pillar=Pillar.SECURITY,
+        area="Protecting networks",
+
         description="Control network traffic at all layers with appropriate security controls",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -592,6 +650,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC05-BP03",
         title="Implement Inspection and Protection",
         pillar=Pillar.SECURITY,
+        area="Protecting networks",
+
         description="Implement network inspection and protection mechanisms",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -613,6 +673,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC05-BP04",
         title="Automate Network Protection",
         pillar=Pillar.SECURITY,
+        area="Protecting networks",
+
         description="Automate network protection to respond to threats quickly",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -634,6 +696,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC04-BP01",
         title="Perform Vulnerability Management",
         pillar=Pillar.SECURITY,
+        area="Protecting compute",
+
         description="Perform regular vulnerability management for compute resources",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -655,6 +719,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC04-BP02",
         title="Use Hardened Images",
         pillar=Pillar.SECURITY,
+        area="Protecting compute",
+
         description="Use hardened images and reduce attack surface of compute resources",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -676,6 +742,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC04-BP03",
         title="Reduce Manual Management and Interactive Access",
         pillar=Pillar.SECURITY,
+        area="Protecting compute",
+
         description="Reduce manual management and interactive access to compute resources",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -697,6 +765,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC04-BP04",
         title="Validate Software Integrity",
         pillar=Pillar.SECURITY,
+        area="Protecting compute",
+
         description="Validate the integrity of software and configurations",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -718,6 +788,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC04-BP05",
         title="Automate Compute Protection",
         pillar=Pillar.SECURITY,
+        area="Protecting compute",
+
         description="Automate compute protection to respond to security events",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -739,6 +811,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC07-BP01",
         title="Identify the Data Within Your Workload",
         pillar=Pillar.SECURITY,
+        area="Data classification",
+
         description="Identify and understand the data within your workload and its sensitivity",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -761,6 +835,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC07-BP02",
         title="Define Data Protection Controls",
         pillar=Pillar.SECURITY,
+        area="Data classification",
+
         description="Define data protection controls based on data classification",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -783,6 +859,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC07-BP03",
         title="Automate Data Classification",
         pillar=Pillar.SECURITY,
+        area="Data classification",
+
         description="Automate data classification to ensure consistent and scalable protection",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -804,6 +882,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC07-BP04",
         title="Define Data Lifecycle Management",
         pillar=Pillar.SECURITY,
+        area="Data classification",
+
         description="Define data lifecycle management based on classification and requirements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -826,6 +906,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC08-BP01",
         title="Implement Secure Key Management",
         pillar=Pillar.SECURITY,
+        area="Protecting data at rest",
+
         description="Implement secure key and certificate management for data at rest",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -847,6 +929,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC08-BP02",
         title="Enforce Encryption at Rest",
         pillar=Pillar.SECURITY,
+        area="Protecting data at rest",
+
         description="Enforce encryption at rest for all sensitive data",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -868,6 +952,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC08-BP03",
         title="Automate Data at Rest Protection",
         pillar=Pillar.SECURITY,
+        area="Protecting data at rest",
+
         description="Automate data at rest protection to ensure consistent security",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -889,6 +975,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC08-BP04",
         title="Enforce Access Control for Data at Rest",
         pillar=Pillar.SECURITY,
+        area="Protecting data at rest",
+
         description="Enforce access control for data at rest using authentication and authorization",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -910,6 +998,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC09-BP01",
         title="Implement Secure Key and Certificate Management",
         pillar=Pillar.SECURITY,
+        area="Protecting data in transit",
+
         description="Implement secure key and certificate management for data in transit",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -931,6 +1021,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC09-BP02",
         title="Enforce Encryption in Transit",
         pillar=Pillar.SECURITY,
+        area="Protecting data in transit",
+
         description="Enforce encryption in transit for all sensitive data",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -952,6 +1044,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC09-BP03",
         title="Authenticate Network Communications",
         pillar=Pillar.SECURITY,
+        area="Protecting data in transit",
+
         description="Authenticate network communications to ensure data integrity and authenticity",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -973,6 +1067,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP01",
         title="Identify Key Personnel and External Resources",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Identify key personnel and external resources for incident response",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -995,6 +1091,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP02",
         title="Develop Incident Management Plans",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Develop and maintain incident management plans and procedures",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1017,6 +1115,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP03",
         title="Prepare Forensic Capabilities",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Prepare forensic capabilities to support incident investigation",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1039,6 +1139,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP04",
         title="Develop and Test Security Incident Response Playbooks",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Develop and test security incident response playbooks",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1061,6 +1163,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP05",
         title="Pre-provision Access",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Pre-provision access for incident response team members",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1083,6 +1187,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP06",
         title="Pre-deploy Tools",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Pre-deploy tools and resources for incident response",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1104,6 +1210,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP07",
         title="Run Game Days",
         pillar=Pillar.SECURITY,
+        area="Preparation",
+
         description="Run game days to test incident response capabilities",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -1126,6 +1234,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC10-BP08",
         title="Establish a Framework for Learning from Incidents",
         pillar=Pillar.SECURITY,
+        area="Post-incident activity",
+
         description="Establish a framework for learning from security incidents",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1148,6 +1258,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP01",
         title="Train for Application Security",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Train development teams on application security best practices",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1170,6 +1282,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP02",
         title="Automate Testing Throughout the Development and Release Lifecycle",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Automate security testing throughout the development and release lifecycle",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1191,6 +1305,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP03",
         title="Perform Regular Penetration Testing",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Perform regular penetration testing to identify security vulnerabilities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1213,6 +1329,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP04",
         title="Perform Manual Code Reviews",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Perform manual code reviews to identify security issues",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1235,6 +1353,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP05",
         title="Centralize Services for Packages and Dependencies",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Centralize services for managing packages and dependencies",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1256,6 +1376,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP06",
         title="Deploy Software Programmatically",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Deploy software programmatically to reduce security risks",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1277,6 +1399,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP07",
         title="Regularly Assess Security Properties of the Deployment Pipeline",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Regularly assess security properties of the deployment pipeline",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1298,6 +1422,8 @@ SECURITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SEC11-BP08",
         title="Build a Program that Embeds Security Ownership in Workload Teams",
         pillar=Pillar.SECURITY,
+        area="Application security",
+
         description="Build a program that embeds security ownership in workload teams",
         risk_level=RiskLevel.HIGH,
         questions=[

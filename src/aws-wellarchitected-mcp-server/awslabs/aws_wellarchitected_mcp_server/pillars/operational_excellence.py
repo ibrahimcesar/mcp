@@ -23,6 +23,9 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP01",
         title="Evaluate External Customer Needs",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
+
         description="Involve key stakeholders to determine where to focus efforts on external customer needs",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -45,6 +48,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP02",
         title="Evaluate Internal Customer Needs",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
         description="Involve key stakeholders to determine where to focus efforts on internal customer needs",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -67,6 +72,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP03",
         title="Evaluate Governance Requirements",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
         description="Incorporate organizational governance requirements into your workload design and operation",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -88,6 +95,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP04",
         title="Evaluate Compliance Requirements",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
         description="Incorporate regulatory, industry, and internal compliance requirements into architectural selection",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -110,6 +119,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP05",
         title="Evaluate Threat Landscape",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
         description="Evaluate threats to the business and maintain current information in a risk registry",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -132,6 +143,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS01-BP06",
         title="Evaluate Tradeoffs While Managing Benefits and Risks",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organization priorities",
+
         description="Balance competing interests and make data-driven decisions with a defined governance framework",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -153,6 +166,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP01",
         title="Resources Have Identified Owners",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Resources must have identified owners for change control, troubleshooting, and other functions",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -175,6 +190,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP02",
         title="Processes and Procedures Have Identified Owners",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Understand who owns the definition of processes and procedures and why they exist",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -197,6 +214,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP03",
         title="Operations Activities Have Identified Owners Responsible for Their Performance",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Understand who has responsibility to perform specific activities on defined workloads",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -219,6 +238,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP04",
         title="Mechanisms Exist to Manage Responsibilities and Ownership",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Understand responsibilities and how they contribute to business outcomes with clear escalation paths",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -241,6 +262,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP05",
         title="Mechanisms Exist to Request Additions, Changes, and Exceptions",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Make requests to owners of processes, procedures, and resources through change management",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -263,6 +286,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS02-BP06",
         title="Responsibilities Between Teams Are Predefined or Negotiated",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Relationships and ownership",
+
         description="Have defined agreements between teams describing how they work with and support each other",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -284,6 +309,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP01",
         title="Executive Sponsorship",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Senior leadership clearly sets expectations for the organization and evaluates success",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -305,6 +332,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP02",
         title="Team Members Are Empowered to Take Action",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Team members have the authority to take action when outcomes are at risk",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -326,6 +355,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP03",
         title="Escalation Is Encouraged",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Team members know when and how to escalate to the appropriate level",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -347,6 +378,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP04",
         title="Communications Are Timely, Clear, and Actionable",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Mechanisms exist to provide timely, clear, and actionable communications",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -368,6 +401,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP05",
         title="Experimentation Is Encouraged",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Experimentation is encouraged to accelerate learning and keep team members interested",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -389,6 +424,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP06",
         title="Learning Is Encouraged",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Learning is encouraged and supported to help team members develop skills",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -410,6 +447,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS03-BP07",
         title="Team Members Are Encouraged to Maintain and Grow Their Skill Sets",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Organizational culture",
+
         description="Team members are provided time and resources to maintain and grow their skills",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -431,6 +470,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS04-BP01",
         title="Identify Key Performance Indicators",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Implement observability",
+
         description="Identify key performance indicators based on desired business and customer outcomes",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -452,6 +493,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS04-BP02",
         title="Implement Application Telemetry",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Implement observability",
+
         description="Emit telemetry that provides insight into the state of your application",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -472,6 +515,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS04-BP03",
         title="Implement User Activity Telemetry",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Implement observability",
+
         description="Emit telemetry that provides insight into customer behavior and experience",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -492,6 +537,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS04-BP04",
         title="Implement Dependency Telemetry",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Implement observability",
+
         description="Emit telemetry that provides insight into the state of services you depend on",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -512,6 +559,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS04-BP05",
         title="Implement Distributed Tracing",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Implement observability",
+
         description="Implement distributed tracing to understand request flows across services",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -532,6 +581,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP01",
         title="Use Version Control",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Use version control to enable tracking of changes and releases",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -552,6 +603,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP02",
         title="Test and Validate Changes",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Test and validate changes to help limit issues in production",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -572,6 +625,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP03",
         title="Use Configuration Management Systems",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Use configuration management systems to make and track configuration changes",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -592,6 +647,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP04",
         title="Use Build and Deployment Management Systems",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Use build and deployment management systems to track and implement changes",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -612,6 +669,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP05",
         title="Perform Patch Management",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Perform patch management to gain features, address issues, and remain supported",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -632,6 +691,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP06",
         title="Share Design Standards",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Share design standards to improve development efficiency and reduce errors",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -653,6 +714,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP07",
         title="Implement Practices to Improve Code Quality",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Implement practices to improve code quality and minimize defects",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -673,6 +736,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP08",
         title="Use Multiple Environments",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Use multiple environments to experiment, develop, and test changes",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -693,6 +758,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP09",
         title="Make Frequent, Small, Reversible Changes",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Make frequent, small, reversible changes to reduce the scope of failure",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -713,6 +780,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS05-BP10",
         title="Fully Automate Integration and Deployment",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Design for operations",
+
         description="Automate integration and deployment to reduce errors and enable rapid delivery",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -733,6 +802,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS06-BP01",
         title="Plan for Unsuccessful Changes",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Mitigate deployment risks",
+
         description="Plan to revert changes that do not have the desired outcome",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -753,6 +824,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS06-BP02",
         title="Test and Validate Changes",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Mitigate deployment risks",
+
         description="Test changes and validate that they will operate as intended",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -773,6 +846,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS06-BP03",
         title="Use Deployment Management Systems",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Mitigate deployment risks",
+
         description="Use deployment management systems to track and control changes",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -793,6 +868,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS06-BP04",
         title="Automate Testing and Rollback",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Mitigate deployment risks",
+
         description="Automate testing and rollback to reduce deployment risks",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -813,6 +890,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP01",
         title="Ensure Personnel Capability",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Have personnel with appropriate skills to support your workload",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -834,6 +913,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP02",
         title="Ensure Consistent Review of Operational Readiness",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Consistently review operational readiness to identify and address gaps",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -855,6 +936,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP03",
         title="Use Runbooks for Procedures",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Use runbooks to perform procedures consistently and efficiently",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -876,6 +959,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP04",
         title="Use Playbooks for Issue Investigation",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Use playbooks to investigate issues consistently and efficiently",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -897,6 +982,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP05",
         title="Make Informed Decisions to Deploy Systems and Changes",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Make informed decisions about when to deploy systems and changes",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -918,6 +1005,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP06",
         title="Enable Support Plans",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Enable support plans appropriate for your business needs",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -939,6 +1028,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS07-BP07",
         title="Automate Responses to Events",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Operational readiness",
+
         description="Automate responses to well-understood operational events to reduce manual effort",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -959,6 +1050,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP01",
         title="Have a Process for Continuous Improvement",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Implement processes to drive continuous improvement of operations",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -981,6 +1074,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP02",
         title="Perform Root Cause Analysis on Failures",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Perform root cause analysis on failures to identify improvement opportunities",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1003,6 +1098,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP03",
         title="Implement Feedback Loops",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Implement feedback loops to capture learnings and drive improvements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1025,6 +1122,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP04",
         title="Perform Knowledge Management",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Perform knowledge management to preserve and share operational knowledge",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1047,6 +1146,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP05",
         title="Define Drivers for Improvement",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Define drivers for operational improvement based on business outcomes",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1068,6 +1169,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP06",
         title="Validate Insights",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Validate insights from operations to ensure they drive effective improvements",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -1089,6 +1192,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP07",
         title="Perform Operations Metrics Reviews",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Perform regular reviews of operations metrics to identify trends and improvements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1110,6 +1215,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP08",
         title="Share Lessons Learned",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Share lessons learned across teams and organization to drive broader improvements",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -1131,6 +1238,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS11-BP09",
         title="Allocate Time to Make Improvements",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Learn, share, and improve",
+
         description="Allocate time and resources to implement operational improvements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1152,6 +1261,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS08-BP01",
         title="Analyze Workload Metrics",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Utilizing workload observability",
+
         description="Regularly review and analyze workload metrics to understand performance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1172,6 +1283,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS08-BP02",
         title="Analyze Workload Logs",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Utilizing workload observability",
+
         description="Regularly review and analyze workload logs to understand behavior",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1192,6 +1305,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS08-BP03",
         title="Analyze Workload Traces",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Utilizing workload observability",
+
         description="Regularly review and analyze workload traces to understand request flows",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1212,6 +1327,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS08-BP04",
         title="Create Actionable Alerts",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Utilizing workload observability",
+
         description="Create alerts that are actionable and provide clear next steps",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1232,6 +1349,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS08-BP05",
         title="Create Dashboards",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Utilizing workload observability",
+
         description="Create dashboards to provide visibility into workload health and performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1252,6 +1371,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS09-BP01",
         title="Measure Operations Goals and KPIs",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Understanding operational health",
+
         description="Measure operations goals and KPIs to understand operational health",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1273,6 +1394,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS09-BP02",
         title="Communicate Status and Trends",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Understanding operational health",
+
         description="Communicate operational status and trends to stakeholders",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1294,6 +1417,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS09-BP03",
         title="Review Operations Metrics and Prioritize Improvement",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Understanding operational health",
+
         description="Review operations metrics regularly and prioritize improvement opportunities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1315,6 +1440,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP01",
         title="Use a Process for Event, Incident, and Problem Management",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Have processes to address observed events, incidents, and problems",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1336,6 +1463,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP02",
         title="Have a Process Per Alert",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Have a well-defined response process for every alert",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1357,6 +1486,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP03",
         title="Prioritize Operational Events Based on Business Impact",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Prioritize operational events based on their business impact",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1378,6 +1509,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP04",
         title="Define Escalation Paths",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Define escalation paths for operational events and incidents",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1399,6 +1532,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP05",
         title="Define a Customer Communication Plan for Outages",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Have a plan to communicate with customers during outages",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1420,6 +1555,8 @@ OPERATIONAL_EXCELLENCE_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="OPS10-BP06",
         title="Communicate Status Through Dashboards",
         pillar=Pillar.OPERATIONAL_EXCELLENCE,
+        area="Responding to events",
+
         description="Provide status visibility through dashboards during operational events",
         risk_level=RiskLevel.LOW,
         questions=[

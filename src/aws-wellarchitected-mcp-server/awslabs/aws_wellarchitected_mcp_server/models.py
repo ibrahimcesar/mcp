@@ -67,6 +67,7 @@ class BestPracticeAssessment(BaseModel):
     best_practice_id: str = Field(description="Unique identifier for the best practice")
     title: str = Field(description="Title of the best practice")
     pillar: Pillar = Field(description="Well-Architected pillar")
+    area: str = Field(description="Area within the pillar (e.g., Organization priorities, Prepare)")
     status: BestPracticeStatus = Field(description="Current implementation status")
     risk_level: RiskLevel = Field(description="Risk level if not implemented")
     description: str = Field(description="Description of the best practice")

@@ -23,6 +23,7 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP01",
         title="Establish a Cloud Financial Management Function",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
         description="Establish a dedicated function to manage cloud financial operations and cost optimization",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -45,6 +46,7 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP02",
         title="Establish a Partnership Between Finance and Technology",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
         description="Establish a partnership between finance and technology teams to optimize cloud costs",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -67,6 +69,7 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP03",
         title="Establish Cloud Budgets and Forecasts",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
         description="Establish budgets and forecasts to track and predict cloud spending",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -89,6 +92,7 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP04",
         title="Implement Cost Awareness in Your Organizational Processes",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
         description="Integrate cost awareness into organizational processes and decision-making",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -111,6 +115,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP05",
         title="Report and Notify on Cost Optimization",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
+
         description="Implement regular reporting and notifications on cost optimization activities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -133,6 +139,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP06",
         title="Monitor Cost Proactively",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
+
         description="Implement proactive cost monitoring to identify and address cost issues early",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -154,6 +162,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP07",
         title="Keep Up-to-Date with New Service Releases",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
+
         description="Stay current with new AWS services and features that can provide cost optimization opportunities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -176,6 +186,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP08",
         title="Create a Cost-Aware Culture",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
+
         description="Foster a culture where cost optimization is everyone's responsibility",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -198,6 +210,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST01-BP09",
         title="Quantify Business Value from Cost Optimization",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Practice Cloud Financial Management",
+
         description="Quantify the business value achieved through cost optimization efforts",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -217,6 +231,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP01",
         title="Develop Policies Based on Your Organization Requirements",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Develop and implement policies that align with organizational requirements for cost governance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -239,6 +255,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP02",
         title="Implement Goals and Targets",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Implement cost optimization goals and targets to drive accountability",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -261,6 +279,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP03",
         title="Implement an Account Structure",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Implement a multi-account structure to provide cost isolation and governance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -282,6 +302,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP04",
         title="Implement Groups and Roles",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Implement groups and roles to manage access and accountability for cost optimization",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -304,6 +326,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP05",
         title="Implement Cost Controls",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Implement controls to prevent cost overruns and enforce cost governance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -325,6 +349,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST02-BP06",
         title="Track Project Lifecycle",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Governance",
+
         description="Track costs throughout the project lifecycle to ensure cost-effective resource usage",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -347,6 +373,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP01",
         title="Configure Detailed Information Sources",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Configure detailed billing and cost information sources for comprehensive cost visibility",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -368,6 +396,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP02",
         title="Identify Cost Attribution Categories",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Identify and implement cost attribution categories for organizational cost allocation",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -390,6 +420,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP03",
         title="Establish Organization Metrics",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Establish metrics that provide insights into cost and usage across the organization",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -412,6 +444,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP04",
         title="Configure Billing and Cost Management Tools",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Configure AWS billing and cost management tools for comprehensive cost monitoring",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -433,6 +467,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP05",
         title="Add Organization Information to Cost and Usage",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Add organizational information to cost and usage data for better attribution and analysis",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -454,6 +490,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST03-BP06",
         title="Allocate Costs Based on Workload Metrics",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Monitor cost and usage",
+
         description="Allocate costs based on workload metrics to understand true cost per business outcome",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -476,6 +514,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST04-BP01",
         title="Track Resources Over Their Lifetime",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Decommission resources",
+
         description="Track resources throughout their lifecycle to identify decommissioning opportunities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -497,6 +537,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST04-BP02",
         title="Implement a Decommissioning Process",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Decommission resources",
+
         description="Implement a systematic process for decommissioning unused resources",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -519,6 +561,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST04-BP03",
         title="Decommission Resources",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Decommission resources",
+
         description="Actively decommission resources that are no longer needed",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -540,6 +584,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST04-BP04",
         title="Decommission Resources Automatically",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Decommission resources",
+
         description="Implement automated decommissioning for resources that are no longer needed",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -561,6 +607,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST04-BP05",
         title="Enforce Data Retention Policies",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Decommission resources",
+
         description="Enforce data retention policies to optimize storage costs",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -582,6 +630,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP01",
         title="Perform Cost Analysis for Different Usage Over Time",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Analyze costs for different usage patterns and time periods to select cost-effective services",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -603,6 +653,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP02",
         title="Select Service Components to Optimize Cost in Line with Organization Priorities",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Select service components that optimize cost while meeting organizational priorities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -625,6 +677,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP03",
         title="Perform a Thorough Analysis of Each Component",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Perform thorough analysis of each service component to ensure cost-effective selection",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -647,6 +701,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP04",
         title="Select Software with Cost-Effective Licensing",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Select software with licensing models that provide cost-effective solutions",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -669,6 +725,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP05",
         title="Select Services for This Workload to Optimize Cost",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Select services specifically optimized for cost while meeting workload requirements",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -691,6 +749,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST05-BP06",
         title="Perform Cost Analysis for Different Usage Over Time",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Evaluate cost when selecting services",
+
         description="Analyze how costs change with different usage patterns over time",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -713,6 +773,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST06-BP01",
         title="Perform Cost Modeling",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the correct resource type, size, and number",
+
         description="Perform cost modeling to understand the cost implications of different resource configurations",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -735,6 +797,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST06-BP02",
         title="Select Resource Type and Size Based on Data",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the correct resource type, size, and number",
+
         description="Select resource types and sizes based on performance and utilization data",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -756,6 +820,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST06-BP03",
         title="Select Resource Type and Size Based on Metrics",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the correct resource type, size, and number",
+
         description="Use metrics to select appropriate resource types and sizes for optimal cost-performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -777,6 +843,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST06-BP04",
         title="Use Shared Resources",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the correct resource type, size, and number",
+
         description="Use shared resources to reduce costs through economies of scale",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -799,6 +867,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST07-BP01",
         title="Perform Pricing Model Analysis",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the best pricing model",
+
         description="Analyze different pricing models to select the most cost-effective options",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -821,6 +891,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST07-BP02",
         title="Choose Regions Based on Cost",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the best pricing model",
+
         description="Select AWS regions based on cost considerations while meeting other requirements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -843,6 +915,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST07-BP03",
         title="Select Third-Party Agreements with Cost-Efficient Terms",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the best pricing model",
+
         description="Negotiate and select third-party agreements with cost-efficient terms",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -865,6 +939,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST07-BP04",
         title="Implement Pricing Models for All Components",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the best pricing model",
+
         description="Implement appropriate pricing models for all workload components",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -886,6 +962,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST07-BP05",
         title="Perform Regular Analysis of Pricing Options",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Select the best pricing model",
+
         description="Regularly analyze pricing options to ensure continued cost optimization",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -908,6 +986,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST08-BP01",
         title="Implement Data Transfer Cost Modeling",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Plan for data transfer",
+
         description="Model data transfer costs to understand and optimize data movement expenses",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -929,6 +1009,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST08-BP02",
         title="Select Components to Optimize Data Transfer Costs",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Plan for data transfer",
+
         description="Select components and architectures that minimize data transfer costs",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -950,6 +1032,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST08-BP03",
         title="Implement Services to Reduce Data Transfer Costs",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Plan for data transfer",
+
         description="Implement AWS services specifically designed to reduce data transfer costs",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -971,6 +1055,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST09-BP01",
         title="Perform Analysis on the Workload Demand",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Manage demand and supply resources",
+
         description="Analyze workload demand patterns to optimize resource provisioning and costs",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -993,6 +1079,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST09-BP02",
         title="Implement a Buffer or Throttle to Manage Demand",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Manage demand and supply resources",
+
         description="Implement buffering or throttling mechanisms to manage demand and control costs",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1014,6 +1102,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST09-BP03",
         title="Supply Resources Dynamically",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Manage demand and supply resources",
+
         description="Dynamically supply resources based on demand to optimize costs",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1035,6 +1125,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST10-BP01",
         title="Develop a Workload Review Process",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Define review process",
+
         description="Develop a process to regularly review workloads for cost optimization opportunities",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1057,6 +1149,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST10-BP02",
         title="Review and Analyze This Workload Regularly",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Define review process",
+
         description="Regularly review and analyze workloads to identify cost optimization opportunities",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1079,6 +1173,8 @@ COST_OPTIMIZATION_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="COST11-BP01",
         title="Perform Automation for Operations",
         pillar=Pillar.COST_OPTIMIZATION,
+        area="Automating operations",
+
         description="Automate operations to reduce manual effort and associated costs",
         risk_level=RiskLevel.MEDIUM,
         questions=[

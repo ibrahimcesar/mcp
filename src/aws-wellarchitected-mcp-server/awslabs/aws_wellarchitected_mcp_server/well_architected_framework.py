@@ -23,6 +23,7 @@ class BestPractice(NamedTuple):
     id: str
     title: str
     pillar: Pillar
+    area: str
     description: str
     risk_level: RiskLevel
     questions: List[str]

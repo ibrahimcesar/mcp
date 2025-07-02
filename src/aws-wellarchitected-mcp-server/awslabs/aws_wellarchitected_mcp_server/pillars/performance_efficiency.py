@@ -23,6 +23,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP01",
         title="Learn About and Understand Available Cloud Services and Features",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Learn about and understand the cloud services and features that are available to you",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -45,6 +47,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP02",
         title="Use Guidance from Your Cloud Provider or an Appropriate Partner",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Use guidance, documentation, and best practices from your cloud provider or an appropriate partner",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -67,6 +71,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP03",
         title="Factor Cost Requirements into Decisions",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Architect for cost when making decisions, and use a data-driven approach",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -89,6 +95,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP04",
         title="Evaluate the Available Options and Trade-offs",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Understand the options available and the trade-offs between them",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -111,6 +119,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP05",
         title="Use Policies and Reference Architectures",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Use internal policies and existing reference architectures when selecting services",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -133,6 +143,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP06",
         title="Use Benchmarking to Drive Architectural Decisions",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Use benchmarking when making architectural decisions for your workload",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -154,6 +166,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF01-BP07",
         title="Use a Data-Driven Approach for Architectural Choices",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Architecture selection",
+
         description="Use a data-driven approach to select the highest-performing architecture",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -175,6 +189,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP01",
         title="Select the Best Compute Options for Your Workload",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
+
         description="Select the best compute options for your workload by understanding performance characteristics",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -196,6 +212,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP02",
         title="Understand the Available Compute Configuration and Features",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
+
         description="Understand how compute configuration options and features impact performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -217,6 +235,7 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP03",
         title="Collect Compute-Related Metrics",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
         description="Record and track compute-related metrics to better understand performance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -238,6 +257,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP04",
         title="Configure and Right-Size Compute Resources",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
+
         description="Configure and right-size compute resources to match workload requirements",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -259,6 +280,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP05",
         title="Use Dynamic Scaling",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
+
         description="Use dynamic scaling to automatically adjust compute resources based on demand",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -280,6 +303,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF02-BP06",
         title="Use Hardware-Based Compute Accelerators",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Compute and hardware",
+
         description="Use hardware-based compute accelerators to improve performance for specific workloads",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -301,6 +326,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF03-BP01",
         title="Use Purpose-Built Data Stores",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Data management",
+
         description="Use purpose-built data stores that best support your data access patterns",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -322,6 +349,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF03-BP02",
         title="Evaluate Available Configuration Options",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Data management",
+
         description="Evaluate the various features and configuration options and how they relate to performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -343,6 +372,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF03-BP03",
         title="Collect and Record Performance Metrics",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Data management",
+
         description="Collect and record performance metrics to understand how your data store is performing",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -364,6 +395,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF03-BP04",
         title="Implement Strategies to Improve Query Performance",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Data management",
+
         description="Implement strategies to improve query performance in your data store",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -385,6 +418,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF03-BP05",
         title="Implement Data Access Patterns That Utilize Caching",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Data management",
+
         description="Implement access patterns that can effectively use caching to improve performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -406,6 +441,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP01",
         title="Understand How Networking Impacts Performance",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Understand how networking impacts performance and the available options to improve it",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -427,6 +464,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP02",
         title="Evaluate Available Networking Features",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Evaluate networking features in the cloud that may increase performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -448,6 +487,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP03",
         title="Choose Appropriate Dedicated Connectivity or VPN",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Choose dedicated connectivity or VPN for hybrid workloads based on performance requirements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -469,6 +510,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP04",
         title="Use Load Balancing to Distribute Traffic",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Use load balancing to distribute traffic across multiple resources",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -490,6 +533,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP05",
         title="Choose Network Protocols to Improve Performance",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Choose network protocols that can improve performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -511,6 +556,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP06",
         title="Choose Your Workload's Location Based on Network Requirements",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Choose your workload's location based on network requirements and user proximity",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -532,6 +579,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF04-BP07",
         title="Optimize Network Configuration Based on Metrics",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Networking and content delivery",
+
         description="Use collected and analyzed data to make informed decisions about optimizing your network configuration",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -553,6 +602,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP01",
         title="Establish Key Performance Indicators (KPIs) to Measure Workload Performance",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Identify and establish KPIs that provide insight into how well your workload is performing",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -574,6 +625,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP02",
         title="Use Monitoring Solutions to Understand the Areas Where Performance Can Be Improved",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Use monitoring solutions to identify performance bottlenecks and improvement opportunities",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -595,6 +648,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP03",
         title="Define a Process to Improve Workload Performance",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Define a repeatable process to evaluate new services, design patterns, and resource types",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -617,6 +672,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP04",
         title="Load Test Your Workload",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Deploy and load test your workload to verify it can handle production traffic",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -638,6 +695,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP05",
         title="Use Automation to Proactively Remediate Performance Issues",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Use automation to detect and remediate performance issues before they impact users",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -659,6 +718,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP06",
         title="Keep Your Workload, the Underlying System, and All Service Components Up to Date",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="Stay current with new resource types and services to improve performance",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -681,6 +742,8 @@ PERFORMANCE_EFFICIENCY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="PERF05-BP07",
         title="Review Metrics at Regular Intervals",
         pillar=Pillar.PERFORMANCE_EFFICIENCY,
+        area="Process and culture",
+
         description="As part of a continuous improvement process, review metrics with cross-functional teams",
         risk_level=RiskLevel.MEDIUM,
         questions=[

@@ -23,6 +23,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS01-BP01",
         title="Choose Region Based on Both Business Requirements and Sustainability Goals",
         pillar=Pillar.SUSTAINABILITY,
+        area="Region selection",
+
         description="Select AWS regions that align with both business requirements and sustainability objectives",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -45,6 +47,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP01",
         title="Scale Infrastructure with User Load",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Scale infrastructure dynamically to match user demand and minimize waste",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -66,6 +70,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP02",
         title="Align SLA with Sustainability Goals",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Align service level agreements with sustainability objectives",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -88,6 +94,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP03",
         title="Stop the Creation and Maintenance of Unused Assets",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Eliminate creation and maintenance of unused or underutilized assets",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -109,6 +117,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP04",
         title="Optimize Areas of Code That Consume the Most Time or Resources",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Focus optimization efforts on code areas with highest resource consumption",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -130,6 +140,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP05",
         title="Optimize Impact on Customer Devices and Equipment",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Minimize the environmental impact on customer devices and equipment",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -152,6 +164,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS02-BP06",
         title="Use Efficient Protocols and Minimize Data Transfer",
         pillar=Pillar.SUSTAINABILITY,
+        area="Alignment to demand",
+
         description="Use efficient network protocols and minimize unnecessary data transfer",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -173,6 +187,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS03-BP01",
         title="Optimize Software and Architecture for Asynchronous and Scheduled Jobs",
         pillar=Pillar.SUSTAINABILITY,
+        area="Software and architecture",
+
         description="Design software to efficiently handle asynchronous and scheduled workloads",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -194,6 +210,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS03-BP02",
         title="Remove or Refactor Workload Components with Low or No Use",
         pillar=Pillar.SUSTAINABILITY,
+        area="Software and architecture",
+
         description="Identify and remove or refactor underutilized workload components",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -215,6 +233,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS03-BP03",
         title="Optimize Areas of Code That Consume the Most Time or Resources",
         pillar=Pillar.SUSTAINABILITY,
+        area="Software and architecture",
+
         description="Focus optimization efforts on the most resource-intensive code areas",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -236,6 +256,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS03-BP04",
         title="Optimize Impact on Customer Devices and Equipment",
         pillar=Pillar.SUSTAINABILITY,
+        area="Software and architecture",
+
         description="Design software to minimize impact on customer devices and equipment",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -258,6 +280,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS03-BP05",
         title="Use Programming Languages and Frameworks That Support Sustainability Goals",
         pillar=Pillar.SUSTAINABILITY,
+        area="Software and architecture",
+
         description="Choose programming languages and frameworks that align with sustainability objectives",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -280,6 +304,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP01",
         title="Implement a Data Classification Policy",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Classify data to optimize storage and processing based on business value and access patterns",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -302,6 +328,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP02",
         title="Use Technologies That Support Data Access and Storage Patterns",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Select storage technologies that align with data access patterns to optimize efficiency",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -323,6 +351,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP03",
         title="Use Lifecycle Policies to Delete Unnecessary Data",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Implement lifecycle policies to automatically delete data that is no longer needed",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -344,6 +374,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP04",
         title="Minimize Data Movement Across Networks",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Reduce unnecessary data movement to minimize network resource consumption",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -365,6 +397,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP05",
         title="Back Up Data Only When Difficult to Recreate",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Implement selective backup strategies focusing on data that is difficult or impossible to recreate",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -387,6 +421,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP06",
         title="Use Shared File Systems or Object Storage to Access Common Data",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Use shared storage solutions to avoid data duplication and improve efficiency",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -408,6 +444,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP07",
         title="Minimize Data Production",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Reduce unnecessary data generation and collection to minimize storage and processing requirements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -430,6 +468,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS04-BP08",
         title="Use Compression and Deduplication",
         pillar=Pillar.SUSTAINABILITY,
+        area="Data",
+
         description="Implement compression and deduplication to reduce storage requirements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -451,6 +491,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS05-BP01",
         title="Use the Minimum Amount of Hardware to Meet Your Needs",
         pillar=Pillar.SUSTAINABILITY,
+        area="Hardware and services",
+
         description="Right-size hardware resources to meet requirements without over-provisioning",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -472,6 +514,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS05-BP02",
         title="Use Instance Types with the Least Impact",
         pillar=Pillar.SUSTAINABILITY,
+        area="Hardware and services",
+
         description="Select instance types that provide the best performance per unit of environmental impact",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -493,6 +537,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS05-BP03",
         title="Use Managed Services",
         pillar=Pillar.SUSTAINABILITY,
+        area="Hardware and services",
+
         description="Leverage AWS managed services to improve resource efficiency and reduce operational overhead",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -514,6 +560,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS05-BP04",
         title="Optimize Your Use of Hardware-Based Compute Accelerators",
         pillar=Pillar.SUSTAINABILITY,
+        area="Hardware and services",
+
         description="Use hardware accelerators efficiently to maximize performance per unit of energy consumed",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -535,6 +583,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS06-BP01",
         title="Adopt Methods That Can Rapidly Introduce Sustainability Improvements",
         pillar=Pillar.SUSTAINABILITY,
+        area="Process and culture",
+
         description="Use development methods that enable rapid implementation of sustainability improvements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -557,6 +607,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS06-BP02",
         title="Keep Your Workload Up-to-Date",
         pillar=Pillar.SUSTAINABILITY,
+        area="Process and culture",
+
         description="Maintain current versions of software and services to benefit from efficiency improvements",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -578,6 +630,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS06-BP03",
         title="Increase Utilization of Build Environments",
         pillar=Pillar.SUSTAINABILITY,
+        area="Process and culture",
+
         description="Optimize build environments to maximize utilization and minimize waste",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -599,6 +653,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS06-BP04",
         title="Use Managed Device Farms for Testing",
         pillar=Pillar.SUSTAINABILITY,
+        area="Process and culture",
+
         description="Use managed device farms to reduce the environmental impact of testing",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -620,6 +676,8 @@ SUSTAINABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="SUS06-BP05",
         title="Use Automation to Reduce the Environmental Impact of Development and Test",
         pillar=Pillar.SUSTAINABILITY,
+        area="Process and culture",
+
         description="Implement automation to reduce manual effort and improve efficiency in development and testing",
         risk_level=RiskLevel.MEDIUM,
         questions=[

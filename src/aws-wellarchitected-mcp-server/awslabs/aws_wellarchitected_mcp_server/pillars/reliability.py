@@ -24,6 +24,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP01",
         title="Become Aware of Service Quotas and Constraints",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Become aware of service quotas and constraints for your workload architecture",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -45,6 +47,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP02",
         title="Manage Service Quotas Across Accounts and Regions",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Manage service quotas across accounts and regions",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -66,6 +70,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP03",
         title="Accommodate Fixed Service Quotas and Constraints",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Accommodate fixed service quotas and constraints through architecture",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -87,6 +93,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP04",
         title="Monitor and Manage Quotas",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Monitor and manage quotas to prevent service disruptions",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -108,6 +116,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP05",
         title="Automate Quota Monitoring",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Automate quota monitoring to proactively manage service limits",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -129,6 +139,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL01-BP06",
         title="Ensure Sufficient Buffer for Quotas",
         pillar=Pillar.RELIABILITY,
+        area="Manage service quotas and constraints",
+
         description="Ensure sufficient buffer between current usage and service quotas",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -150,6 +162,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL02-BP01",
         title="Ensure Highly Available Network Connectivity for Users",
         pillar=Pillar.RELIABILITY,
+        area="Plan your network topology",
+
         description="Ensure highly available network connectivity for users",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -171,6 +185,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL02-BP02",
         title="Ensure Highly Available Network Connectivity Between Systems",
         pillar=Pillar.RELIABILITY,
+        area="Plan your network topology",
+
         description="Ensure highly available network connectivity between systems in AWS and on-premises",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -192,6 +208,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL02-BP03",
         title="Ensure IP Subnet Allocation Accounts for Expansion and Availability",
         pillar=Pillar.RELIABILITY,
+        area="Plan your network topology",
+
         description="Ensure IP subnet allocation accounts for expansion and availability",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -213,6 +231,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL02-BP04",
         title="Prefer Hub-and-Spoke Topologies over Many-to-Many Mesh",
         pillar=Pillar.RELIABILITY,
+        area="Plan your network topology",
+
         description="Prefer hub-and-spoke topologies over many-to-many mesh for network design",
         risk_level=RiskLevel.LOW,
         questions=[
@@ -234,6 +254,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL02-BP05",
         title="Enforce Non-overlapping Private IP Address Ranges",
         pillar=Pillar.RELIABILITY,
+        area="Plan your network topology",
+
         description="Enforce non-overlapping private IP address ranges in multiple private address spaces",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -255,6 +277,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL03-BP01",
         title="Choose How to Segment Your Workload",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload service architecture",
+
         description="Choose how to segment your workload to balance reliability and cost",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -277,6 +301,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL03-BP02",
         title="Build Services Focused on Specific Business Domains",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload service architecture",
+
         description="Build services focused on specific business domains and functions",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -299,6 +325,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL03-BP03",
         title="Provide Service Contracts per API",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload service architecture",
+
         description="Provide service contracts per API to ensure reliable service interactions",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -320,6 +348,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL04-BP01",
         title="Identify Which Kind of Distributed System Failure to Protect Against",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to prevent failures",
+
         description="Identify which kind of distributed system failure to protect against",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -342,6 +372,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL04-BP02",
         title="Implement Loosely Coupled Dependencies",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to prevent failures",
+
         description="Implement loosely coupled dependencies to improve system resilience",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -363,6 +395,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL04-BP03",
         title="Do Constant Work",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to prevent failures",
+
         description="Do constant work to avoid system instability from varying loads",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -384,6 +418,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL04-BP04",
         title="Make All Responses Idempotent",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to prevent failures",
+
         description="Make all responses idempotent to handle retries safely",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -405,6 +441,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP01",
         title="Implement Graceful Degradation",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Implement graceful degradation to transform applicable hard dependencies into soft dependencies",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -426,6 +464,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP02",
         title="Throttle Requests",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Throttle requests to protect your workload and dependent services",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -447,6 +487,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP03",
         title="Control and Limit Retry Calls",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Control and limit retry calls to avoid overwhelming systems",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -468,6 +510,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP04",
         title="Fail Fast and Limit Queues",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Fail fast and limit queues to prevent resource exhaustion",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -489,6 +533,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP05",
         title="Set Client Timeouts",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Set client timeouts to avoid waiting indefinitely for responses",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -510,6 +556,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP06",
         title="Make Services Stateless Where Possible",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Make services stateless where possible to improve scalability and resilience",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -531,6 +579,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL05-BP07",
         title="Implement Emergency Levers",
         pillar=Pillar.RELIABILITY,
+        area="Design interactions in a distributed system to mitigate or withstand failures",
+
         description="Implement emergency levers to quickly mitigate impact during incidents",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -553,6 +603,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL06-BP01",
         title="Monitor All Components for the Workload",
         pillar=Pillar.RELIABILITY,
+        area="Monitor workload resources",
+
         description="Monitor all components for the workload to understand their health and performance",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -574,6 +626,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL06-BP02",
         title="Define and Calculate Metrics",
         pillar=Pillar.RELIABILITY,
+        area="Monitor workload resources",
+
         description="Store log data and apply filters where necessary to calculate metrics",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -592,6 +646,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL06-BP03",
         title="Send Notifications Based on Monitoring",
         pillar=Pillar.RELIABILITY,
+        area="Monitor workload resources",
+
         description="Organizations that need to know when operations are impacted receive notifications",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -610,6 +666,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL06-BP04",
         title="Automate Responses to Events",
         pillar=Pillar.RELIABILITY,
+        area="Monitor workload resources",
+
         description="Use automation to take action when an event is detected",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -628,6 +686,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL07-BP01",
         title="Use Auto Scaling or Other Scaling Policies",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to adapt to changes in demand",
+
         description="Use auto scaling or other scaling policies to adapt to changes in demand",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -649,6 +709,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL07-BP04",
         title="Load Test Your Workload",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to adapt to changes in demand",
+
         description="Adopt a load testing methodology to measure if scaling activity meets workload requirements",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -667,6 +729,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL08-BP01",
         title="Use Runbooks for Standard Activities",
         pillar=Pillar.RELIABILITY,
+        area="Implement change",
+
         description="Use runbooks for standard activities to ensure consistent execution",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -689,6 +753,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL08-BP03",
         title="Integrate Resiliency Testing as Part of Your Deployment",
         pillar=Pillar.RELIABILITY,
+        area="Implement change",
+
         description="This approach reduces configuration drift and ensures consistent deployments",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -707,6 +773,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL08-BP04",
         title="Deploy Using Immutable Infrastructure",
         pillar=Pillar.RELIABILITY,
+        area="Implement change",
+
         description="Deploy using immutable infrastructure to reduce configuration drift",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -725,6 +793,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL08-BP05",
         title="Deploy Changes with Automation",
         pillar=Pillar.RELIABILITY,
+        area="Implement change",
+
         description="Deployments and patching are automated to eliminate negative impact",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -743,6 +813,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL09-BP01",
         title="Identify and Back Up All Data That Needs to Be Backed Up",
         pillar=Pillar.RELIABILITY,
+        area="Back up data",
+
         description="Identify and back up all data that needs to be backed up, or reproduce the data from sources",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -764,6 +836,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL09-BP02",
         title="Secure and Encrypt Backups",
         pillar=Pillar.RELIABILITY,
+        area="Back up data",
+
         description="Secure and encrypt backups to protect data integrity and confidentiality",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -785,6 +859,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL09-BP03",
         title="Perform Data Backup Automatically",
         pillar=Pillar.RELIABILITY,
+        area="Back up data",
+
         description="Perform data backup automatically based on a periodic schedule or changes to the dataset",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -806,6 +882,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL09-BP04",
         title="Perform Periodic Recovery of the Data to Verify Backup Integrity and Processes",
         pillar=Pillar.RELIABILITY,
+        area="Back up data",
+
         description="Validate that your backup process implementation meets Recovery Time Objective and Recovery Point Objective",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -827,6 +905,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL10-BP01",
         title="Deploy the Workload to Multiple Locations",
         pillar=Pillar.RELIABILITY,
+        area="Use fault isolation to protect your workload",
+
         description="Distribute workload data and resources across multiple Availability Zones or AWS Regions",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -848,6 +928,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL10-BP02",
         title="Select the Appropriate Locations for Your Multi-Location Deployment",
         pillar=Pillar.RELIABILITY,
+        area="Use fault isolation to protect your workload",
+
         description="For high availability, always deploy your workload components to multiple Availability Zones",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -869,6 +951,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL10-BP03",
         title="Use Bulkhead Architectures to Limit Scope of Impact",
         pillar=Pillar.RELIABILITY,
+        area="Use fault isolation to protect your workload",
+
         description="Implement bulkhead architectures to prevent failures from impacting multiple components",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -890,6 +974,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP01",
         title="Monitor All Components of the Workload to Detect Failures",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Continuously monitor the health of your workload so that you can quickly identify when failures occur",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -911,6 +997,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP02",
         title="Fail Over to Healthy Resources",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Ensure that if a resource failure occurs, healthy resources can continue to serve requests",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -932,6 +1020,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP03",
         title="Automate Healing on All Layers",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Upon detection of a failure, use automated capabilities to perform actions to remediate",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -953,6 +1043,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP04",
         title="Rely on the Data Plane and Not the Control Plane During Recovery",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="The control plane is used to configure resources, and the data plane is used to deliver service",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -974,6 +1066,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP05",
         title="Use Static Stability to Prevent Bimodal Behavior",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Workloads should be statically stable and only operate in a single normal mode",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -995,6 +1089,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP06",
         title="Send Notifications When Events Impact Availability",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Notifications are sent upon the detection of significant events, even if the issue caused by the event was automatically resolved",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1016,6 +1112,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL11-BP07",
         title="Architect Your Product to Meet Availability Targets and Uptime Service Level Agreements (SLAs)",
         pillar=Pillar.RELIABILITY,
+        area="Design your workload to withstand component failures",
+
         description="Architect to meet your availability targets and any uptime SLAs you have with your customers",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1037,6 +1135,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL12-BP01",
         title="Use Playbooks to Investigate Failures",
         pillar=Pillar.RELIABILITY,
+        area="Test reliability",
+
         description="Enable consistent and prompt responses to failure scenarios that are not well understood",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1058,6 +1158,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL12-BP02",
         title="Perform Post-Incident Analysis",
         pillar=Pillar.RELIABILITY,
+        area="Test reliability",
+
         description="Review customer-impacting events, and identify the contributing factors and preventative action items",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1079,6 +1181,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL12-BP03",
         title="Test Functional Requirements and Include Resiliency Testing",
         pillar=Pillar.RELIABILITY,
+        area="Test reliability",
+
         description="Use techniques such as load testing, penetration testing, chaos engineering, and game days",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1100,6 +1204,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL12-BP04",
         title="Use Chaos Engineering",
         pillar=Pillar.RELIABILITY,
+        area="Test reliability",
+
         description="Run chaos engineering experiments regularly to understand how your systems respond to failure",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1121,6 +1227,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL12-BP05",
         title="Conduct Game Days Regularly",
         pillar=Pillar.RELIABILITY,
+        area="Test reliability",
+
         description="Use game days to regularly exercise your procedures for responding to events and failures",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1142,6 +1250,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL13-BP01",
         title="Define Recovery Objectives for Downtime and Data Loss",
         pillar=Pillar.RELIABILITY,
+        area="Plan for disaster recovery (DR)",
+
         description="The workload has a recovery time objective (RTO) and recovery point objective (RPO)",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1163,6 +1273,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL13-BP02",
         title="Use Defined Recovery Strategies to Meet the Recovery Objectives",
         pillar=Pillar.RELIABILITY,
+        area="Plan for disaster recovery (DR)",
+
         description="A disaster recovery (DR) strategy has been defined to meet objectives",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1184,6 +1296,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL13-BP03",
         title="Test Disaster Recovery Implementation to Validate the Implementation",
         pillar=Pillar.RELIABILITY,
+        area="Plan for disaster recovery (DR)",
+
         description="Regularly test failover to DR to ensure that RTO and RPO are met",
         risk_level=RiskLevel.HIGH,
         questions=[
@@ -1205,6 +1319,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL13-BP04",
         title="Manage Configuration Drift at the DR Site or Region",
         pillar=Pillar.RELIABILITY,
+        area="Plan for disaster recovery (DR)",
+
         description="Ensure that the infrastructure, data, and configuration are as needed at the DR site or region",
         risk_level=RiskLevel.MEDIUM,
         questions=[
@@ -1226,6 +1342,8 @@ RELIABILITY_BEST_PRACTICES: Dict[str, BestPractice] = {
         id="REL13-BP05",
         title="Automate Recovery",
         pillar=Pillar.RELIABILITY,
+        area="Plan for disaster recovery (DR)",
+
         description="Use AWS or third-party tools to automate system recovery and reduce recovery time",
         risk_level=RiskLevel.MEDIUM,
         questions=[
